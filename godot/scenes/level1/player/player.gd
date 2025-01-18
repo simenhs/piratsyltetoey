@@ -12,13 +12,17 @@ var facing_left : bool = false
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
+@onready var jump_buffer_timer: Timer = %JumpBufferTimer
 
 func _physics_process(delta: float) -> void:
 	_move(delta)
 	
 	if is_on_floor():
 		coyote_timer.start() # starts timer that allows the player to jump a short period after running of platform
-	if Input.is_action_just_pressed("jump"):
+	else :
+		if Input.is_action_just_pressed("jump"): 
+			jump_buffer_timer.start()
+	if Input.is_action_just_pressed("jump") or not jump_buffer_timer.is_stopped():
 		_jump(delta)
 	
 	_fall_down(delta)
@@ -30,10 +34,10 @@ func _physics_process(delta: float) -> void:
 
 
 func _jump(delta : float):
-	
 	if not coyote_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
 		coyote_timer.stop()
+	
 	
 	if is_on_wall():
 		velocity.y = JUMP_VELOCITY 

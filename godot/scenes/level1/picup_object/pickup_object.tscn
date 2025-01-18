@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://5r7jflx0vqw1"]
+
+[ext_resource type="Script" path="res://scenes/level1/picup_object/pickup_object.gd" id="1_cii00"]
+[ext_resource type="Script" path="res://scenes/level1/picup_object/loose_pice.gd" id="2_2xjy3"]
+[ext_resource type="Script" path="res://scenes/level1/picup_object/home_position.gd" id="2_qkavf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7aq6o"]
+size = Vector2(59, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk0ra"]
+size = Vector2(57, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3i2b6"]
+radius = 54.0093
+
+[node name="pickupObject" type="Node2D"]
+script = ExtResource("1_cii00")
+
+[node name="HomePosition" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 4
+script = ExtResource("2_qkavf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomePosition"]
+position = Vector2(29, 24)
+shape = SubResource("RectangleShape2D_7aq6o")
+
+[node name="ColorRect" type="ColorRect" parent="HomePosition"]
+unique_name_in_owner = true
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 59.0
+offset_bottom = 50.0
+color = Color(0.254331, 0.589812, 0.327141, 0.294118)
+metadata/_edit_use_anchors_ = true
+
+[node name="HomeName" type="Label" parent="HomePosition"]
+unique_name_in_owner = true
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 49.0
+offset_bottom = 36.0
+text = "A"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LoosePice" type="RigidBody2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 3
+contact_monitor = true
+script = ExtResource("2_2xjy3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice"]
+position = Vector2(29.5, 25)
+shape = SubResource("RectangleShape2D_gk0ra")
+
+[node name="ColorRect" type="ColorRect" parent="LoosePice"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 56.0
+offset_bottom = 47.0
+color = Color(1, 0.27451, 1, 1)
+
+[node name="LoosePiceLabel" type="Label" parent="LoosePice"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="PicupArea2D" type="Area2D" parent="LoosePice"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice/PicupArea2D"]
+position = Vector2(31, 24)
+shape = SubResource("CircleShape2D_3i2b6")
+
+[connection signal="body_entered" from="HomePosition" to="HomePosition" method="_on_body_entered"]
+[connection signal="body_exited" from="HomePosition" to="HomePosition" method="_on_body_exited"]

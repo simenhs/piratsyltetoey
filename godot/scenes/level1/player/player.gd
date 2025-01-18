@@ -1,25 +1,62 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED :float = 300.0
+const JUMP_VELOCITY :float = -400.0
+const SLIDE_DOWN_SPEED :float= 50
+const DASH_SPEED :float= 10000
+const DASH_COOLDOWN_TIME :float = 1
 
+var dash_on_cooldown :bool = false
+var facing_left : bool = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	_move(delta)
+	if Input.is_action_just_pressed("jump"):
+		_jump(delta)
+	_fall_down(delta)
+	
+	
+	if Input.is_action_just_pressed("dash"):
+		_dash()
+	move_and_slide()
+
+	
+
+func _jump(delta : float):
+	if is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	if is_on_wall():
+		velocity.y = JUMP_VELOCITY 
+		velocity.x = -Input.get_axis("left", "right")
+		
+func _fall_down(delta : float):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		if is_on_wall() and (Input.is_action_pressed("left") or Input.is_action_pressed("right") ):
+			if velocity.y > 0:
+				velocity.y = SLIDE_DOWN_SPEED
+		
+	
+		
+func _move(delat: float) : 
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		facing_left =  Input.is_action_pressed("left")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x =  move_toward(velocity.x, 0, SPEED*delat*5)
+		velocity.x = clamp(velocity.x,-SPEED,SPEED)
 
-	move_and_slide()
+func _dash():
+	if not dash_on_cooldown :
+		if facing_left: 
+			velocity.x = -DASH_SPEED
+		else : 
+			velocity.x = DASH_SPEED
+		dash_on_cooldown = true
+		get_tree().create_timer(DASH_COOLDOWN_TIME).timeout.connect(_on_dash_cooldown_timeout)
+
+
+func _on_dash_cooldown_timeout():
+	dash_on_cooldown = false

@@ -10,10 +10,17 @@ const DASH_COOLDOWN_TIME :float = 1
 var dash_on_cooldown :bool = false
 var facing_left : bool = false
 
+
+@onready var coyote_timer: Timer = %CoyoteTimer
+
 func _physics_process(delta: float) -> void:
 	_move(delta)
+	
+	if is_on_floor():
+		coyote_timer.start() # starts timer that allows the player to jump a short period after running of platform
 	if Input.is_action_just_pressed("jump"):
 		_jump(delta)
+	
 	_fall_down(delta)
 	
 	
@@ -21,11 +28,13 @@ func _physics_process(delta: float) -> void:
 		_dash()
 	move_and_slide()
 
-	
 
 func _jump(delta : float):
-	if is_on_floor():
+	
+	if not coyote_timer.is_stopped():
 		velocity.y = JUMP_VELOCITY
+		coyote_timer.stop()
+	
 	if is_on_wall():
 		velocity.y = JUMP_VELOCITY 
 		velocity.x = -Input.get_axis("left", "right")

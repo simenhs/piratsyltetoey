@@ -6,6 +6,7 @@
 [node name="Level1" type="Node"]
 
 [node name="World" parent="." instance=ExtResource("1_cwunv")]
+scale = Vector2(1.64, 1.64)
 
 [node name="Player" parent="." instance=ExtResource("2_qf4gi")]
 position = Vector2(927, 309)

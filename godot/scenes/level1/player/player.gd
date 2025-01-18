@@ -9,6 +9,7 @@ const DASH_COOLDOWN_TIME :float = 1
 
 var dash_on_cooldown :bool = false
 var facing_left : bool = false
+var bounce_count : int = 0
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -19,11 +20,26 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		coyote_timer.start() # starts timer that allows the player to jump a short period after running of platform
-	else :
-		if Input.is_action_just_pressed("jump"): 
-			jump_buffer_timer.start()
-	if Input.is_action_just_pressed("jump") or not jump_buffer_timer.is_stopped():
-		_jump(delta)
+
+	if not jump_buffer_timer.is_stopped() :
+		if is_on_wall():
+			wall_jump(delta)
+
+		if is_on_floor():
+			_bounce_jump(delta)
+
+			
+	if Input.is_action_just_pressed("jump"):
+		if is_on_wall():
+			wall_jump(delta)
+
+		else:
+			if not coyote_timer.is_stopped():
+				_jump(delta)
+
+			else :
+				jump_buffer_timer.start()
+			
 	
 	_fall_down(delta)
 	
@@ -34,14 +50,21 @@ func _physics_process(delta: float) -> void:
 
 
 func _jump(delta : float):
-	if not coyote_timer.is_stopped():
-		velocity.y = JUMP_VELOCITY
-		coyote_timer.stop()
+	velocity.y = JUMP_VELOCITY
+	coyote_timer.stop()
+	bounce_count = 0
+		
+		
+func _bounce_jump(delat : float):
+	print(velocity.y)
+	velocity.y = JUMP_VELOCITY + JUMP_VELOCITY*0.1 *bounce_count
+	bounce_count += 1 
+	coyote_timer.stop()
 	
-	
-	if is_on_wall():
+func wall_jump(delta:float):
 		velocity.y = JUMP_VELOCITY 
 		velocity.x = -Input.get_axis("left", "right")
+		coyote_timer.stop()
 		
 func _fall_down(delta : float):
 	if not is_on_floor():

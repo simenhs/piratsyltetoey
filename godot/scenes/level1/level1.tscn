@@ -12,26 +12,26 @@ script = ExtResource("1_rsi31")
 [node name="World" parent="." instance=ExtResource("1_cwunv")]
 
 [node name="Player" parent="." instance=ExtResource("2_qf4gi")]
-position = Vector2(927, 309)
+position = Vector2(983, 454)
 
 [node name="pickupObject" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(236, 264)
+position = Vector2(1780, 365)
 
 [node name="pickupObject2" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(1735, 85)
+position = Vector2(597, 288)
 display_name = "B"
 
 [node name="pickupObject3" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(345, 809)
+position = Vector2(53, 759)
 display_name = "C"
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 966.0
-offset_top = 590.0
-offset_right = 1534.0
-offset_bottom = 658.0
-theme_override_font_sizes/font_size = 64
+offset_left = 143.0
+offset_top = 104.0
+offset_right = 240.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 20
 text = "20.0"
 horizontal_alignment = 1
 

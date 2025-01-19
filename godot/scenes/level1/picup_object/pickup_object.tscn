@@ -66,6 +66,7 @@ color = Color(1, 0.27451, 1, 1)
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
+text = "A"
 
 [node name="PicupArea2D" type="Area2D" parent="LoosePice"]
 unique_name_in_owner = true

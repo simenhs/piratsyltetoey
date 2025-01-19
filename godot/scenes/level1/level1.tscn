@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://5r7jflx0vqw1" path="res://scenes/level1/picup_object/pickup_object.tscn" id="3_8oqeh"]
 
 [node name="Level1" type="Node"]
+process_mode = 3
 script = ExtResource("1_rsi31")
 
 [node name="World" parent="." instance=ExtResource("1_cwunv")]

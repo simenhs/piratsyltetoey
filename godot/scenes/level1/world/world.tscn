@@ -1,14 +1,127 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmnhro72jpck8"]
 
-[ext_resource type="Texture2D" uid="uid://bggjs026ie68q" path="res://assets/images/blueprint.png" id="1_cduw4"]
+[ext_resource type="Texture2D" uid="uid://8prj8ivq5acv" path="res://assets/images/blueprint_3.png" id="1_incgx"]
 
 [node name="World" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-225, -1240)
-scale = Vector2(9.37891, 19.2785)
-texture = ExtResource("1_cduw4")
+texture = ExtResource("1_incgx")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(43, 392, 21, 492, 31, 832, 79, 874, 413, 782, 595, 698, 687, 532, 721, 520, 739, 584, 791, 582, 819, 514, 837, 468, 913, 494, 1193, 506, 1421, 500, 1453, 524, 1503, 528, 1549, 502, 1613, 428, 1833, 420, 1875, 410, 1885, 356, 1871, 308, 1773, 294, 1695, 290, 1283, 288, 1221, 254, 749, 252, 725, 310, 689, 236, 665, 236, 639, 138, 611, 150, 581, 164, 573, 204, 587, 226, 591, 336, 563, 366, 539, 386, 50, 403, -417, 332, -203, -236, 1936, -312, 2616, 96, 2459, 1460, -379, 1524, -366, 323, 5, 390)
+position = Vector2(-16, 87)
+polygon = PackedVector2Array(31, 424, 25, 817, 162, 834, 367, 793, 512, 753, 561, 694, 594, 691, 612, 712, 650, 711, 680, 671, 724, 684, 1265, 684, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 481, 377, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
+
+[node name="platform_art" type="Node2D" parent="."]
+
+[node name="Line2D14" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(1243, 555, 1369, 558)
+width = 4.0
+
+[node name="Line2D" type="Line2D" parent="platform_art"]
+position = Vector2(-13, -42)
+points = PackedVector2Array(435, 791, 413, 690)
+width = 4.0
+
+[node name="Line2D2" type="Line2D" parent="platform_art"]
+position = Vector2(18, -30)
+points = PackedVector2Array(198, 763, 203, 668)
+width = 4.0
+
+[node name="Line2D3" type="Line2D" parent="platform_art"]
+position = Vector2(-6, -25)
+points = PackedVector2Array(314, 786, 302, 667)
+width = 4.0
+
+[node name="Line2D4" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(476, 458, 556, 585, 604, 568, 524, 441)
+width = 4.0
+
+[node name="Line2D6" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(169, 629, 188, 584, 310, 575, 417, 580, 450, 620)
+width = 4.0
+
+[node name="Line2D7" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(98, 838, 112, 776, 119, 617, 110, 572)
+width = 4.0
+
+[node name="Line2D5" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(612, 756, 572, 729, 651, 688)
+width = 4.0
+
+[node name="Line2D8" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(1666, 735, 1666, 632, 1547, 735)
+width = 4.0
+
+[node name="Line2D10" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(1885, 483, 1791, 536, 1794, 641, 1887, 660)
+width = 4.0
+
+[node name="Line2D9" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(662, 523, 727, 686)
+width = 4.0
+
+[node name="Line2D11" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(727, 520, 855, 522)
+width = 4.0
+
+[node name="Line2D12" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(905, 600, 1076, 601)
+width = 4.0
+
+[node name="Line2D13" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(1190, 513, 1188, 630)
+width = 4.0
+
+[node name="Line2D15" type="Line2D" parent="platform_art"]
+points = PackedVector2Array(1410, 623, 1545, 600)
+width = 4.0
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(35, 0)
+polygon = PackedVector2Array(79, 566, 91, 620, 83, 779, 65, 838, 56, 836, 72, 774, 80, 616, 66, 574)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(176, 627, 191, 588, 319, 582, 416, 586, 444, 621, 459, 615, 420, 570, 313, 568, 177, 573, 159, 624)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(212, 636, 210, 729, 220, 732, 228, 639)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(291, 643, 303, 765, 313, 761, 300, 641)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(392, 649, 415, 748, 426, 748, 406, 650)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(614, 748, 586, 729, 653, 690, 648, 680, 566, 727, 601, 754, 614, 780, 629, 783)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(471, 466, 551, 591, 613, 568, 545, 427, 449, 348, 440, 458)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(655, 523, 720, 686, 731, 685, 666, 522)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(679, 736, 1283, 738, 1280, 751, 675, 746)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(730, 529, 854, 529, 852, 516, 731, 513)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(904, 594, 903, 605, 1072, 608, 1075, 595)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1244, 547, 1242, 560, 1369, 565, 1368, 549)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1185, 513, 1183, 628, 1192, 628, 1193, 512)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1406, 616, 1409, 629, 1545, 606, 1541, 592)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1528, 743, 1670, 630, 1668, 758)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(1898, 469, 1793, 536, 1792, 638, 1921, 671)

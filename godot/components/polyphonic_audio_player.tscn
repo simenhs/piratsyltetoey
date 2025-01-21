@@ -4,5 +4,5 @@
 
 [node name="polyphonic_audio_player" type="AudioStreamPlayer"]
 autoplay = true
-max_polyphony = 128
+max_polyphony = 32
 script = ExtResource("1_ffixk")

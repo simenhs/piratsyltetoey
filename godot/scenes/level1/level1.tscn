@@ -12,14 +12,25 @@ script = ExtResource("1_rsi31")
 [node name="World" parent="." instance=ExtResource("1_cwunv")]
 
 [node name="Player" parent="." instance=ExtResource("2_qf4gi")]
-position = Vector2(55, 763)
+position = Vector2(927, 309)
+
+[node name="pickupObject" parent="." instance=ExtResource("3_8oqeh")]
+position = Vector2(236, 264)
+
+[node name="pickupObject2" parent="." instance=ExtResource("3_8oqeh")]
+position = Vector2(1735, 85)
+display_name = "B"
+
+[node name="pickupObject3" parent="." instance=ExtResource("3_8oqeh")]
+position = Vector2(345, 809)
+display_name = "C"
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 1287.0
-offset_top = 838.0
-offset_right = 1414.0
-offset_bottom = 926.0
+offset_left = 966.0
+offset_top = 590.0
+offset_right = 1534.0
+offset_bottom = 658.0
 theme_override_font_sizes/font_size = 64
 text = "20.0"
 horizontal_alignment = 1
@@ -28,44 +39,5 @@ horizontal_alignment = 1
 wait_time = 45.0
 one_shot = true
 autostart = true
-
-[node name="pickupObject" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(500, 522)
-ejection_force = Vector2(500, -100)
-ejection_delay = 0.0
-
-[node name="pickupObject2" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(742, 468)
-display_name = "B"
-ejection_force = Vector2(1000, -20)
-ejection_delay = 6.0
-
-[node name="pickupObject3" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(553, 697)
-display_name = "C"
-ejection_force = Vector2(-500, -1500)
-ejection_delay = 3.0
-
-[node name="WinLabel" type="Label" parent="."]
-unique_name_in_owner = true
-visible = false
-offset_left = 605.0
-offset_top = 518.0
-offset_right = 1415.0
-offset_bottom = 752.0
-theme_override_colors/font_color = Color(0.39553, 0.935321, 0.374666, 1)
-theme_override_font_sizes/font_size = 128
-text = "VICTORY! "
-
-[node name="LoosLabel" type="Label" parent="."]
-unique_name_in_owner = true
-visible = false
-offset_left = 605.0
-offset_top = 518.0
-offset_right = 1415.0
-offset_bottom = 752.0
-theme_override_colors/font_color = Color(0.749306, 0.204109, 0.0733278, 1)
-theme_override_font_sizes/font_size = 128
-text = "YOU FAILED..."
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

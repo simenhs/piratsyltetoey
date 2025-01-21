@@ -1,0 +1,22 @@
+[gd_scene load_steps=11 format=3 uid="uid://vuy67oyr2buv"]
+
+[ext_resource type="PackedScene" uid="uid://2rx5e74o2ywa" path="res://components/polyphonic_audio_player.tscn" id="1_jjo3n"]
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/audio_library.gd" id="2_fnxn6"]
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="3_kbgrk"]
+[ext_resource type="Resource" uid="uid://d4d15gmw2adx" path="res://resources/sound_effects/jump.tres" id="4_b4hns"]
+[ext_resource type="Resource" uid="uid://j4kw01oltuif" path="res://resources/sound_effects/step_on_metal.tres" id="5_gxwxp"]
+[ext_resource type="Resource" uid="uid://d3nnfymwgeu7y" path="res://resources/sound_effects/step_on_wood.tres" id="6_gjuca"]
+[ext_resource type="Resource" uid="uid://du6dj7yn5fpk0" path="res://resources/sound_effects/hit_metal.tres" id="7_bdtlx"]
+[ext_resource type="Resource" uid="uid://6ha7toalxvjw" path="res://resources/sound_effects/hit_wood.tres" id="8_8ujl0"]
+[ext_resource type="Resource" uid="uid://b5ll76mlg2cke" path="res://resources/sound_effects/throw.tres" id="9_vcyii"]
+
+[sub_resource type="Resource" id="Resource_wbh1l"]
+script = ExtResource("2_fnxn6")
+sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii")])
+
+[node name="persistent_world" type="Node2D"]
+
+[node name="polyphonic_audio_player" parent="." instance=ExtResource("1_jjo3n")]
+audio_library = SubResource("Resource_wbh1l")
+
+[node name="current_level_root" type="Node2D" parent="."]

@@ -50,19 +50,20 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _jump(delta : float):
+func _jump(_delta : float):
+	globals.play_sound("jump")
 	velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
 	bounce_count = 0
 		
 		
-func _bounce_jump(delat : float):
+func _bounce_jump(_delta : float):
 	print(velocity.y)
 	velocity.y = JUMP_VELOCITY + JUMP_VELOCITY*0.1 *bounce_count
 	bounce_count += 1 
 	coyote_timer.stop()
 	
-func wall_jump(delta:float):
+func wall_jump(_delta:float):
 		velocity.y = JUMP_VELOCITY 
 		velocity.x = -Input.get_axis("left", "right")
 		coyote_timer.stop()

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://6ha7toalxvjw"]
+
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="1_r1t4u"]
+[ext_resource type="AudioStream" uid="uid://dcdfxx1r8whq0" path="res://assets/audio/pop.mp3" id="2_ju0yh"]
+
+[resource]
+script = ExtResource("1_r1t4u")
+name = "hit_wood"
+streams = Array[AudioStream]([ExtResource("2_ju0yh")])

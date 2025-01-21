@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2rx5e74o2ywa"]
+
+[ext_resource type="Script" path="res://components/polyphonic_audio_player.gd" id="1_ffixk"]
+
+[node name="polyphonic_audio_player" type="AudioStreamPlayer"]
+max_polyphony = 32
+script = ExtResource("1_ffixk")

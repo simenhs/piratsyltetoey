@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://components/polyphonic_audio_player.gd" id="1_ffixk"]
 
 [node name="polyphonic_audio_player" type="AudioStreamPlayer"]
-max_polyphony = 32
+autoplay = true
+max_polyphony = 128
 script = ExtResource("1_ffixk")

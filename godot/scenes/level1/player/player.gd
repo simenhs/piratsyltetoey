@@ -58,15 +58,17 @@ func _jump(_delta : float):
 		
 		
 func _bounce_jump(_delta : float):
+	globals.play_sound("jump")
 	print(velocity.y)
 	velocity.y = JUMP_VELOCITY + JUMP_VELOCITY*0.1 *bounce_count
 	bounce_count += 1 
 	coyote_timer.stop()
 	
 func wall_jump(_delta:float):
-		velocity.y = JUMP_VELOCITY 
-		velocity.x = -Input.get_axis("left", "right")
-		coyote_timer.stop()
+	globals.play_sound("jump")
+	velocity.y = JUMP_VELOCITY 
+	velocity.x = -Input.get_axis("left", "right")
+	coyote_timer.stop()
 		
 func _fall_down(delta : float):
 	if not is_on_floor():

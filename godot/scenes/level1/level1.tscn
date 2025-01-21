@@ -12,18 +12,24 @@ script = ExtResource("1_rsi31")
 [node name="World" parent="." instance=ExtResource("1_cwunv")]
 
 [node name="Player" parent="." instance=ExtResource("2_qf4gi")]
-position = Vector2(927, 309)
+position = Vector2(930, 681)
 
 [node name="pickupObject" parent="." instance=ExtResource("3_8oqeh")]
 position = Vector2(236, 264)
+ejection_force = Vector2(300, 300)
+ejection_delay = 0.0
 
 [node name="pickupObject2" parent="." instance=ExtResource("3_8oqeh")]
 position = Vector2(1735, 85)
 display_name = "B"
+ejection_force = Vector2(300, 300)
+ejection_delay = 0.0
 
 [node name="pickupObject3" parent="." instance=ExtResource("3_8oqeh")]
 position = Vector2(345, 809)
 display_name = "C"
+ejection_force = Vector2(300, 300)
+ejection_delay = 0.0
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true

@@ -12,7 +12,7 @@ script = ExtResource("1_rsi31")
 [node name="World" parent="." instance=ExtResource("1_cwunv")]
 
 [node name="Player" parent="." instance=ExtResource("2_qf4gi")]
-position = Vector2(950, 706)
+position = Vector2(55, 763)
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -30,18 +30,18 @@ one_shot = true
 autostart = true
 
 [node name="pickupObject" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(210, 518)
-ejection_force = Vector2(-1000, -100)
+position = Vector2(500, 522)
+ejection_force = Vector2(500, -100)
 ejection_delay = 0.0
 
 [node name="pickupObject2" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(957, 536)
+position = Vector2(742, 468)
 display_name = "B"
-ejection_force = Vector2(-500, -400)
+ejection_force = Vector2(1000, -20)
 ejection_delay = 6.0
 
 [node name="pickupObject3" parent="." instance=ExtResource("3_8oqeh")]
-position = Vector2(1711, 691)
+position = Vector2(553, 697)
 display_name = "C"
 ejection_force = Vector2(-500, -1500)
 ejection_delay = 3.0

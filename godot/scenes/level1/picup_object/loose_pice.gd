@@ -6,7 +6,8 @@ extends RigidBody2D
 
 var _lock_transform : Transform2D 
 var _locked := false
-var attatched_to : Player = null
+var attatched_to : Player = null : set = set_attached_to
+var _spaw_position : Transform2D
 
 
 @onready var picup_area_2d: Area2D = %PicupArea2D
@@ -15,6 +16,7 @@ var attatched_to : Player = null
 
 func _ready() -> void:
 	set_id(_id)
+	_spaw_position = transform
 
 func _integrate_forces(state):
 	if attatched_to != null:
@@ -63,3 +65,26 @@ func set_id(value):
 	_id = value
 	if is_instance_valid(loose_pice_label):
 		loose_pice_label.text = _id
+
+
+func _on_body_entered(body: Node) -> void:
+	globals.play_sound("hit_metal") #todo detect hitd ting floor or walls 
+
+func set_attached_to(value):
+	if value == null:
+		if is_instance_valid(attatched_to):
+			attatched_to.drop_items.disconnect(respawn)
+		attatched_to = value
+	else : 
+		attatched_to = value
+		attatched_to.drop_items.connect(respawn)
+		
+
+func respawn():
+	#freeze_mode = FreezeMode.FREEZE_MODE_KINEMATIC
+	#freeze = true
+	#position = _spaw_position
+	attatched_to = null
+	PhysicsServer2D.body_set_state(self, PhysicsServer2D.BODY_STATE_TRANSFORM, _spaw_position)
+	
+	

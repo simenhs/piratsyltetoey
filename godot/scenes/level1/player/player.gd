@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+signal drop_items 
 
 const SPEED :float = 300.0
 const JUMP_VELOCITY :float = -400.0
@@ -13,11 +14,15 @@ var facing_left : bool = false
 var bounce_count : int = 0
 var was_on_floor :bool
 var bounsing = false
+var spawn_position : Vector2
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
 @onready var jump_buffer_timer: Timer = %JumpBufferTimer
 @onready var hand_position: Marker2D = %HandPosition
+
+func _ready() -> void:
+	spawn_position = position
 
 func _physics_process(delta: float) -> void:
 	_move(delta)
@@ -122,3 +127,7 @@ func _on_dash_cooldown_timeout():
 
 func get_global_hand_transform():
 	return hand_position.global_transform
+	
+func respawn():
+	position = spawn_position
+	drop_items.emit()

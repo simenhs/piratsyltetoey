@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_ohdff")
-name = "hit_metal"
+name = "throw"
 streams = Array[AudioStream]([ExtResource("2_h2862")])

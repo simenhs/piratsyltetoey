@@ -15,6 +15,7 @@ size = Vector2(73, 17)
 size = Vector2(296.5, 17)
 
 [node name="World" type="StaticBody2D"]
+collision_mask = 5
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(706, 441, 710, 538, 1611, 538, 1612, 558, 1641, 560, 1639, 546, 1624, 548, 1625, 525, 722, 521, 726, 437)

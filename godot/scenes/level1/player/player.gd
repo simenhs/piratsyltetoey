@@ -85,13 +85,18 @@ func _fall_down(delta : float):
 		bounsing = false
 		velocity += get_gravity() * delta
 		if is_on_wall() and (Input.is_action_pressed("left") or Input.is_action_pressed("right") ):
+			globals.play_sound_looping("wall_slide", "my_slide_key")
 			if velocity.y > 0:
 				velocity.y = SLIDE_DOWN_SPEED
-				#TODO: slide on wall sound loop
-	
+		else : 
+			globals.stop_sound_looping("my_slide_key") 
+	else: 
+		globals.stop_sound_looping("my_slide_key") 
+		
 	if is_on_floor() and not was_on_floor and not bounsing:
 		_hit_floor()
 	was_on_floor = is_on_floor()
+		
 		
 		
 func _hit_floor():

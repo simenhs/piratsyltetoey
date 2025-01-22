@@ -3,19 +3,22 @@ class_name LoosePice
 extends RigidBody2D
 
 @export var _id : String : set = set_id
+@export var _texture : Texture2D : set = set_texture
 
 var _lock_transform : Transform2D 
 var _locked := false
 var attatched_to : Player = null : set = set_attached_to
-var _spaw_position : Transform2D
+var _spaw_position : Transform2D 
 
 
 @onready var picup_area_2d: Area2D = %PicupArea2D
 #@onready var home_position: HomePosition = %HomePosition
 @onready var loose_pice_label: Label = %LoosePiceLabel
+@onready var sprite_2d: Sprite2D = %Sprite2D 
 
 func _ready() -> void:
 	set_id(_id)
+	set_texture(_texture)
 	_spaw_position = transform
 
 func _integrate_forces(state):
@@ -87,4 +90,8 @@ func respawn():
 	attatched_to = null
 	PhysicsServer2D.body_set_state(self, PhysicsServer2D.BODY_STATE_TRANSFORM, _spaw_position)
 	
+func set_texture(value): 
+	_texture = value
+	if is_instance_valid(sprite_2d):
+		sprite_2d.texture = _texture
 	

@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=15 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
 [ext_resource type="PackedScene" uid="uid://qboe47l73lll" path="res://scenes/level1/player/player.tscn" id="2_qf4gi"]
+[ext_resource type="Texture2D" uid="uid://biko0m1vbdbjg" path="res://assets/images/objects/placeholder_gunpowder.png" id="5_a8vkl"]
 [ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="5_d34i5"]
+[ext_resource type="Texture2D" uid="uid://crca8vg6yu2b5" path="res://assets/images/objects/placeholder_flint.png" id="6_8ailn"]
 [ext_resource type="PackedScene" uid="uid://cns7qe6d4pkwi" path="res://scenes/level1/spikes/spikes.tscn" id="6_altx8"]
 [ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="6_ij8bl"]
+[ext_resource type="Texture2D" uid="uid://cv43v436joiqw" path="res://assets/images/objects/bullet.png" id="6_lu112"]
+[ext_resource type="Texture2D" uid="uid://dyt1dghhti3dr" path="res://assets/images/objects/placeholder_bullet.png" id="7_n4mbl"]
 [ext_resource type="PackedScene" uid="uid://dgdyfdupmiw03" path="res://scenes/level1/doors/button.tscn" id="7_wkms2"]
 [ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="8_bvmn0"]
+[ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="9_lgp8j"]
+[ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="10_1mkss"]
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -34,31 +40,40 @@ one_shot = true
 autostart = true
 
 [node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
+modulate = Color(1, 0, 0, 0.3)
 position = Vector2(522, 722)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
+_texture = ExtResource("5_a8vkl")
 
 [node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
+modulate = Color(1, 0, 0, 0.3)
 position = Vector2(517, 554)
 loose_pice = NodePath("../LoosePice2")
 _id = "B"
+_texture = ExtResource("6_8ailn")
 
 [node name="HomePosition3" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-position = Vector2(739, 466)
+modulate = Color(1, 0, 0, 0.3)
+position = Vector2(783, 494)
 loose_pice = NodePath("../LoosePice3")
 _id = "A"
+_texture = ExtResource("7_n4mbl")
 
 [node name="LoosePice" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(1575, 585)
+position = Vector2(64, 578)
 _id = "C"
+_texture = ExtResource("10_1mkss")
 
 [node name="LoosePice2" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(60, 591)
+position = Vector2(1577, 590)
 _id = "B"
+_texture = ExtResource("9_lgp8j")
 
 [node name="LoosePice3" parent="." instance=ExtResource("6_ij8bl")]
 position = Vector2(1856, 705)
 _id = "A"
+_texture = ExtResource("6_lu112")
 
 [node name="Spikes" parent="." instance=ExtResource("6_altx8")]
 

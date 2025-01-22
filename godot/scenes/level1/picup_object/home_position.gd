@@ -6,17 +6,19 @@ extends Area2D
 
 @export var loose_pice: LoosePice 
 @export var _id : String : set = set_id
-
-@onready var color_rect: ColorRect = %ColorRect
-@onready var home_name: Label = %HomeName
+@export var _texture :Texture2D : set = set_texture
 
 var _attract :bool = false
 
+#@onready var color_rect: ColorRect = %ColorRect
+@onready var home_name: Label = %HomeName
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	set_id(_id)
-	color_rect.color  =Color.RED
-	color_rect.color.a = .3
+	set_texture(_texture)
+	modulate  =Color.RED
+	modulate.a = .3
 
 func _physics_process(_delta: float) -> void:
 	if is_instance_valid(loose_pice):
@@ -28,18 +30,23 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_exited(_body: Node2D) -> void:
 	if not get_overlapping_bodies().has(loose_pice):
-		color_rect.color  =Color.RED
-		color_rect.color.a = .3
+		modulate  =Color.RED
+		modulate.a = .3
 		_attract = false
 
 
 func _on_body_entered(_body: Node2D) -> void:
 	if get_overlapping_bodies().has(loose_pice):
-		color_rect.color  =Color.TURQUOISE
-		color_rect.color.a = .3
+		modulate  =Color.TURQUOISE
+		modulate.a = .3
 		_attract = true
 
 func set_id(value):
 	_id = value
 	if is_instance_valid(home_name):
 		home_name.text = _id
+
+func set_texture(value):
+	_texture = value
+	if is_instance_valid(sprite_2d):
+		sprite_2d.texture = _texture

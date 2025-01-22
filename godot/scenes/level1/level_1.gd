@@ -8,8 +8,8 @@ var _game_won = false
 
 @onready var timer_label: Label = %TimerLabel
 @onready var timer: Timer = $Timer
-@onready var win_label: Label = %WinLabel
-@onready var loos_label: Label = %LoosLabel
+#@onready var win_label: Label = %WinLabel
+#@onready var loos_label: Label = %LoosLabel
 
 
 func _input(event: InputEvent) -> void:
@@ -28,11 +28,11 @@ func _process(delta: float) -> void:
 	
 	if all_objects_fixed:
 		game_won.emit()
-		win_label.show()
+		#win_label.show()
 		_game_won = true
 
 
 func _on_timer_timeout() -> void:
 	if not game_won:
 		game_lost.emit()
-		loos_label.show()
+		#loos_label.show()

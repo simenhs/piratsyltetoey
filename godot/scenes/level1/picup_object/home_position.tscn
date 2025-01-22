@@ -13,16 +13,6 @@ script = ExtResource("1_3g2w2")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_7aq6o")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-offset_left = -31.0
-offset_top = -26.0
-offset_right = 29.0
-offset_bottom = 25.0
-color = Color(0.254331, 0.589812, 0.327141, 0.294118)
-metadata/_edit_use_anchors_ = true
-
 [node name="HomeName" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = -19.0

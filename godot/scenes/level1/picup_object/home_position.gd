@@ -17,7 +17,7 @@ var _attract :bool = false
 func _ready() -> void:
 	set_id(_id)
 	set_texture(_texture)
-	modulate  =Color.RED
+	modulate  =Color.WHITE
 	modulate.a = .3
 
 func _physics_process(_delta: float) -> void:
@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_exited(_body: Node2D) -> void:
 	if not get_overlapping_bodies().has(loose_pice):
-		modulate  =Color.RED
+		modulate  =Color.WHITE
 		modulate.a = .3
 		_attract = false
 

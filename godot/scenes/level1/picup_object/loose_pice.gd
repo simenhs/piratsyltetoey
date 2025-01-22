@@ -25,11 +25,11 @@ func _integrate_forces(state):
 	if attatched_to != null:
 		#if global_position.distance_to(attatched_to.global_position) > 10 :
 			#apply_central_impulse(attatched_to.global_position.direction_to(global_position) * -700)   
-		freeze_mode = FreezeMode.FREEZE_MODE_KINEMATIC
-		freeze = true
+		#freeze_mode = FreezeMode.FREEZE_MODE_KINEMATIC
+		#freeze = true
 		global_transform = attatched_to.get_global_hand_transform()
-	else :
-		freeze = false 
+	#else :
+		#freeze = false 
 
 			
 func _input(event: InputEvent) -> void:

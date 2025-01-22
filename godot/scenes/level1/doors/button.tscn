@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgdyfdupmiw03"]
+[gd_scene load_steps=6 format=3 uid="uid://dgdyfdupmiw03"]
 
 [ext_resource type="Script" path="res://scenes/level1/doors/button.gd" id="1_frilg"]
+[ext_resource type="Texture2D" uid="uid://b17jngu0rimx5" path="res://assets/images/objects/button.png" id="2_5adqi"]
+[ext_resource type="Texture2D" uid="uid://c7bw3i2330wtb" path="res://assets/images/objects/button_pressed.png" id="3_3anas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlneh"]
-size = Vector2(46, 29)
+size = Vector2(46, 3.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk5x7"]
-size = Vector2(42, 32)
+size = Vector2(42, 22)
 
 [node name="DoorButton" type="StaticBody2D"]
 collision_layer = 16
@@ -14,6 +16,7 @@ script = ExtResource("1_frilg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -19.0
 offset_top = -29.0
 offset_right = 21.0
@@ -21,7 +24,7 @@ offset_bottom = -1.0
 color = Color(0.411765, 0.54902, 0.972549, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -16)
+position = Vector2(1, -3.25)
 shape = SubResource("RectangleShape2D_wlneh")
 
 [node name="Trigger" type="Area2D" parent="."]
@@ -30,8 +33,19 @@ collision_layer = 16
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
-position = Vector2(1, -32)
+position = Vector2(1, -17)
 shape = SubResource("RectangleShape2D_uk5x7")
+
+[node name="ButtonSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
+texture = ExtResource("2_5adqi")
+
+[node name="ButtonPressedSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-1, -3)
+texture = ExtResource("3_3anas")
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]

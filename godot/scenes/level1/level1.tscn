@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=16 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="8_bvmn0"]
 [ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="9_lgp8j"]
 [ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="10_1mkss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83c7m"]
+radius = 22.0907
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -65,15 +68,24 @@ position = Vector2(64, 578)
 _id = "C"
 _texture = ExtResource("10_1mkss")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
+polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
+
 [node name="LoosePice2" parent="." instance=ExtResource("6_ij8bl")]
 position = Vector2(1577, 590)
 _id = "B"
 _texture = ExtResource("9_lgp8j")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice2"]
+polygon = PackedVector2Array(-15, -1, -9, 14, 0, 27, 10, 15, 15, 0, 10, -16, 1, -28, -9, -15)
+
 [node name="LoosePice3" parent="." instance=ExtResource("6_ij8bl")]
 position = Vector2(1856, 705)
 _id = "A"
 _texture = ExtResource("6_lu112")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice3"]
+shape = SubResource("CircleShape2D_83c7m")
 
 [node name="Spikes" parent="." instance=ExtResource("6_altx8")]
 

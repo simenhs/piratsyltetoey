@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=9 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="5_d34i5"]
 [ext_resource type="PackedScene" uid="uid://cns7qe6d4pkwi" path="res://scenes/level1/spikes/spikes.tscn" id="6_altx8"]
 [ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="6_ij8bl"]
+[ext_resource type="PackedScene" uid="uid://dgdyfdupmiw03" path="res://scenes/level1/doors/button.tscn" id="7_wkms2"]
+[ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="8_bvmn0"]
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -32,12 +34,12 @@ one_shot = true
 autostart = true
 
 [node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-position = Vector2(587, 688)
+position = Vector2(522, 722)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
 
 [node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-position = Vector2(498, 525)
+position = Vector2(517, 554)
 loose_pice = NodePath("../LoosePice2")
 _id = "B"
 
@@ -47,56 +49,79 @@ loose_pice = NodePath("../LoosePice3")
 _id = "A"
 
 [node name="LoosePice" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(1543, 567)
+position = Vector2(1575, 585)
 _id = "C"
 
 [node name="LoosePice2" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(55, 540)
+position = Vector2(60, 591)
 _id = "B"
 
 [node name="LoosePice3" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(1811, 670)
+position = Vector2(1856, 705)
 _id = "A"
 
 [node name="Spikes" parent="." instance=ExtResource("6_altx8")]
 
-[node name="Line2D" type="Line2D" parent="Spikes"]
-points = PackedVector2Array(141, 860, 179, 892, 194, 855, 238, 879, 281, 840, 315, 874, 342, 830, 370, 864, 407, 810, 431, 843, 455, 797, 486, 827, 504, 772, 538, 793)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes"]
-polygon = PackedVector2Array(138, 860, 507, 766, 538, 790, 544, 825, 384, 907, 143, 931)
+position = Vector2(-8, -11)
+polygon = PackedVector2Array(145, 832, 540, 826, 483, 878, 143, 931)
 
 [node name="Spikes2" parent="." instance=ExtResource("6_altx8")]
 position = Vector2(0, 6)
 
-[node name="Line2D" type="Line2D" parent="Spikes2"]
-position = Vector2(52, 6)
-points = PackedVector2Array(1003, 520, 1009, 511, 1015, 523, 1022, 510, 1028, 522, 1037, 513, 1038, 521)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes2"]
-position = Vector2(904, -289)
+position = Vector2(847, -290)
 polygon = PackedVector2Array(148, 804, 191, 805, 192, 816, 148, 818)
 
 [node name="Spikes3" parent="." instance=ExtResource("6_altx8")]
 position = Vector2(127, 7)
 
-[node name="Line2D" type="Line2D" parent="Spikes3"]
-position = Vector2(52, 6)
-points = PackedVector2Array(1003, 520, 1009, 511, 1015, 523, 1022, 510, 1028, 522, 1037, 513, 1038, 521)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes3"]
-position = Vector2(904, -291)
+position = Vector2(808, -289)
 polygon = PackedVector2Array(148, 804, 191, 805, 192, 816, 148, 818)
 
 [node name="Spikes4" parent="." instance=ExtResource("6_altx8")]
 position = Vector2(266, 6)
 
-[node name="Line2D" type="Line2D" parent="Spikes4"]
-position = Vector2(52, 6)
-points = PackedVector2Array(1003, 520, 1009, 511, 1015, 523, 1022, 510, 1028, 522, 1037, 513, 1038, 521)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes4"]
-position = Vector2(904, -291)
-polygon = PackedVector2Array(148, 804, 191, 805, 192, 816, 148, 818)
+position = Vector2(760, -289)
+polygon = PackedVector2Array(148, 805, 165, 802, 183, 805, 183, 816, 148, 818)
+
+[node name="Spikes5" parent="." instance=ExtResource("6_altx8")]
+position = Vector2(266, 6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes5"]
+position = Vector2(853, -289)
+polygon = PackedVector2Array(148, 805, 165, 802, 183, 805, 183, 816, 148, 818)
+
+[node name="button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
+position = Vector2(1484, 621)
+door = NodePath("../Door")
+
+[node name="button2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
+position = Vector2(1118, 735)
+door = NodePath("../Door2")
+
+[node name="button3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
+position = Vector2(1048, 736)
+door = NodePath("../Door3")
+
+[node name="button4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
+position = Vector2(978, 737)
+door = NodePath("../Door4")
+
+[node name="Door" parent="." instance=ExtResource("8_bvmn0")]
+position = Vector2(873, 529)
+
+[node name="Door2" parent="." instance=ExtResource("8_bvmn0")]
+position = Vector2(579, 768)
+
+[node name="Door3" parent="." instance=ExtResource("8_bvmn0")]
+position = Vector2(481, 593)
+rotation = 1.5708
+
+[node name="Door4" parent="." instance=ExtResource("8_bvmn0")]
+position = Vector2(484, 675)
+rotation = 1.5708
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

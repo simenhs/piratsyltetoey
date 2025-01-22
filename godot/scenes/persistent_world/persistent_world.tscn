@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vuy67oyr2buv"]
+[gd_scene load_steps=13 format=3 uid="uid://vuy67oyr2buv"]
 
 [ext_resource type="PackedScene" uid="uid://2rx5e74o2ywa" path="res://components/polyphonic_audio_player.tscn" id="1_jjo3n"]
 [ext_resource type="Script" path="res://scripts/custom_resource_bases/audio_library.gd" id="2_fnxn6"]
@@ -10,10 +10,11 @@
 [ext_resource type="Resource" uid="uid://6ha7toalxvjw" path="res://resources/sound_effects/hit_wood.tres" id="8_8ujl0"]
 [ext_resource type="Resource" uid="uid://b5ll76mlg2cke" path="res://resources/sound_effects/throw.tres" id="9_vcyii"]
 [ext_resource type="Resource" uid="uid://0spyh38in14r" path="res://resources/sound_effects/pickup.tres" id="10_c8odm"]
+[ext_resource type="Resource" uid="uid://b25ldaflpcuhi" path="res://resources/sound_effects/wall_slide.tres" id="11_gtj4d"]
 
 [sub_resource type="Resource" id="Resource_wbh1l"]
 script = ExtResource("2_fnxn6")
-sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii"), ExtResource("10_c8odm")])
+sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii"), ExtResource("10_c8odm"), ExtResource("11_gtj4d")])
 
 [node name="persistent_world" type="Node2D"]
 

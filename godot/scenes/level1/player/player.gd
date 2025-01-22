@@ -96,9 +96,8 @@ func _fall_down(delta : float):
 		
 func _hit_floor():
 	bounce_count = 0
-	globals.play_sound("hit_metal") # Todo: replase with landing sound 
-	
-		
+	globals.play_sound("hit_metal") # Todo: replase with landing sound
+
 func _move(delat: float) : 
 	var direction := Input.get_axis("left", "right")
 	if direction:

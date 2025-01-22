@@ -13,10 +13,11 @@ func play_sound(sound_name: String) -> bool:
 		printerr("sound_name was invalid or empty, cannot play sound.")
 		return false
 
-	var audio_player = WORLD_ROOT.get_node("polyphonic_audio_player")
+	var audio_player : AudioStreamPlayer= WORLD_ROOT.get_node("polyphonic_audio_player")
 	if not audio_player:
 		printerr("failed to get audio player node, scene tree likely borked!")
 		return false
+	
 	
 	var success: bool = audio_player.play_sound(sound_name)
 	return success

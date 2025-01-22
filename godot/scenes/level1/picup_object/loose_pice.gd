@@ -5,8 +5,8 @@ extends RigidBody2D
 @export var _id : String : set = set_id
 @export var _texture : Texture2D : set = set_texture
 
-var _lock_transform : Transform2D 
-var _locked := false
+#var _lock_transform : Transform2D 
+#var _locked := false
 var attatched_to : Player = null : set = set_attached_to
 var _spaw_position : Transform2D 
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 	set_texture(_texture)
 	_spaw_position = transform
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	if attatched_to != null:
 		#if global_position.distance_to(attatched_to.global_position) > 10 :
 			#apply_central_impulse(attatched_to.global_position.direction_to(global_position) * -700)   
@@ -70,7 +70,7 @@ func set_id(value):
 		loose_pice_label.text = _id
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	globals.play_sound("hit_metal") #todo detect hitd ting floor or walls 
 
 func set_attached_to(value):

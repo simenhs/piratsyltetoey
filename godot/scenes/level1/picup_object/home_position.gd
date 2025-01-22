@@ -20,6 +20,11 @@ func _ready() -> void:
 	modulate  =Color.WHITE
 	modulate.a = .3
 
+func _process(_delta: float) -> void:
+	# respawn pice if it somehow cliped throug wall and is way outside map
+	if global_position.distance_to(loose_pice.global_position) > 1920: 
+		loose_pice.respawn()
+
 func _physics_process(_delta: float) -> void:
 	if is_instance_valid(loose_pice):
 		if _attract and loose_pice.attatched_to == null :

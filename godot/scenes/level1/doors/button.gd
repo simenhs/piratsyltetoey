@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 
-func _on_trigger_body_entered(body: Node2D) -> void:
+func _on_trigger_body_entered(_body: Node2D) -> void:
 	#if scale.y > 0.5: 
 		#var tween = create_tween()
 		#tween.tween_property(self,"scale:y",0.5,1)
@@ -25,11 +25,11 @@ func _on_trigger_body_entered(body: Node2D) -> void:
 	door.open()
 
 
-func _on_trigger_body_exited(body: Node2D) -> void:
+func _on_trigger_body_exited(_body: Node2D) -> void:
 	if trigger.get_overlapping_bodies().size() ==  0 :
 		#var tween = create_tween()
 		#tween.tween_property(self,"scale:y",1,1)
 		modulate = Color.WHITE
 		button_sprite.show()
-		button_pressed_sprite.hide
+		button_pressed_sprite.hide()
 		door.close()

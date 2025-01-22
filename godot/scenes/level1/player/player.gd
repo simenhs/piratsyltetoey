@@ -13,8 +13,10 @@ var dash_on_cooldown :bool = false
 var facing_left : bool = false
 var bounce_count : int = 0
 var was_on_floor :bool
-var bounsing = false
+var bounsing := false
 var spawn_position : Vector2
+var _wall_sliding := false : set = set_wall_sliding
+
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -85,13 +87,14 @@ func _fall_down(delta : float):
 		bounsing = false
 		velocity += get_gravity() * delta
 		if is_on_wall() and (Input.is_action_pressed("left") or Input.is_action_pressed("right") ):
-			globals.play_sound_looping("wall_slide", "my_slide_key")
+			_wall_sliding = true
 			if velocity.y > 0:
 				velocity.y = SLIDE_DOWN_SPEED
 		else : 
-			globals.stop_sound_looping("my_slide_key") 
+			_wall_sliding = false	
 	else: 
-		globals.stop_sound_looping("my_slide_key") 
+		_wall_sliding = false
+		
 		
 	if is_on_floor() and not was_on_floor and not bounsing:
 		_hit_floor()
@@ -136,3 +139,12 @@ func respawn():
 	#todo: Play death sound 
 	position = spawn_position
 	drop_items.emit()
+
+func set_wall_sliding(value):
+	if _wall_sliding == value:
+		return
+	_wall_sliding = value
+	if _wall_sliding:
+		globals.play_sound_looping("wall_slide", "my_slide_key")
+	else : 
+		globals.stop_sound_looping("my_slide_key") 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=23 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
@@ -14,9 +14,24 @@
 [ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="8_bvmn0"]
 [ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="9_lgp8j"]
 [ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="10_1mkss"]
+[ext_resource type="Texture2D" uid="uid://dfaaowosboqfk" path="res://assets/images/objects/door_horizontal_box_and_flint.png" id="15_y6im4"]
+[ext_resource type="Texture2D" uid="uid://coaafbpu22q4t" path="res://assets/images/objects/door_upper_right.png" id="16_sunmh"]
+[ext_resource type="Texture2D" uid="uid://dm08rnnyh3cys" path="res://assets/images/objects/door_vertical_box.png" id="17_ddjf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83c7m"]
 radius = 22.0907
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjo40"]
+size = Vector2(123, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxwdp"]
+size = Vector2(15, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_684gc"]
+size = Vector2(126, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emi5l"]
+size = Vector2(10, 83)
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -43,21 +58,21 @@ one_shot = true
 autostart = true
 
 [node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 0, 0, 0.3)
+modulate = Color(1, 1, 1, 0.3)
 position = Vector2(522, 722)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
 _texture = ExtResource("5_a8vkl")
 
 [node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 0, 0, 0.3)
+modulate = Color(1, 1, 1, 0.3)
 position = Vector2(517, 554)
 loose_pice = NodePath("../LoosePice2")
 _id = "B"
 _texture = ExtResource("6_8ailn")
 
 [node name="HomePosition3" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 0, 0, 0.3)
+modulate = Color(1, 1, 1, 0.3)
 position = Vector2(783, 494)
 loose_pice = NodePath("../LoosePice3")
 _id = "A"
@@ -138,17 +153,34 @@ position = Vector2(978, 737)
 door = NodePath("../Door4")
 
 [node name="Door" parent="." instance=ExtResource("8_bvmn0")]
-position = Vector2(873, 529)
+position = Vector2(523, 680)
+_texture = ExtResource("15_y6im4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_tjo40")
 
 [node name="Door2" parent="." instance=ExtResource("8_bvmn0")]
-position = Vector2(579, 768)
+position = Vector2(896, 492)
+_texture = ExtResource("16_sunmh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Door2"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_xxwdp")
 
 [node name="Door3" parent="." instance=ExtResource("8_bvmn0")]
-position = Vector2(481, 593)
-rotation = 1.5708
+position = Vector2(525, 593)
+_texture = ExtResource("15_y6im4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+shape = SubResource("RectangleShape2D_684gc")
 
 [node name="Door4" parent="." instance=ExtResource("8_bvmn0")]
-position = Vector2(484, 675)
-rotation = 1.5708
+position = Vector2(581, 725)
+_texture = ExtResource("17_ddjf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_emi5l")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

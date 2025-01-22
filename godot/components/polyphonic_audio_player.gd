@@ -9,7 +9,7 @@ func _ready() -> void:
 	var level_scene = load("res://scenes/level1/level1.tscn").instantiate()
 	$"../current_level_root".add_child(level_scene)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not playing:
 		self.play()
 

@@ -17,7 +17,7 @@ func _input(event: InputEvent) -> void:
 		get_tree().quit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timer_label.text = str(timer.time_left).pad_decimals(1)
 	
 	var all_objects_fixed = true

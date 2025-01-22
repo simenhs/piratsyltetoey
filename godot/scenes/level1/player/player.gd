@@ -128,5 +128,6 @@ func get_global_hand_transform():
 	return hand_position.global_transform
 	
 func respawn():
+	#todo: Play death sound 
 	position = spawn_position
 	drop_items.emit()

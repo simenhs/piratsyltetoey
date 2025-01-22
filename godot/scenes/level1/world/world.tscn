@@ -1,12 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmnhro72jpck8"]
+[gd_scene load_steps=4 format=3 uid="uid://dmnhro72jpck8"]
 
-[ext_resource type="Texture2D" uid="uid://cu6x1ctk8fpxa" path="res://assets/images/blueprint_3_unfinished.png" id="1_xhd8s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_okakv"]
-size = Vector2(321, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3gbq"]
-size = Vector2(155.5, 119)
+[ext_resource type="Texture2D" uid="uid://b1pt42asyo0a2" path="res://assets/images/blueprint_3_platforms.png" id="1_75fq0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cuw1j"]
 size = Vector2(73, 17)
@@ -21,20 +15,12 @@ collision_mask = 5
 polygon = PackedVector2Array(706, 441, 710, 538, 1611, 538, 1612, 558, 1641, 560, 1639, 546, 1624, 548, 1625, 525, 722, 521, 726, 437)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xhd8s")
+texture = ExtResource("1_75fq0")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-16, 87)
-polygon = PackedVector2Array(31, 424, 25, 817, 162, 834, 367, 793, 512, 753, 561, 694, 596, 688, 615, 669, 680, 671, 688, 654, 1265, 650, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 481, 377, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(153.5, 628)
-shape = SubResource("RectangleShape2D_okakv")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(63.25, 862.5)
-shape = SubResource("RectangleShape2D_p3gbq")
+polygon = PackedVector2Array(31, 424, 31, 531, 326, 536, 331, 553, 29.1866, 554.569, 27, 712, 150, 713, 150, 832, 367, 793, 512, 753, 561, 689, 478, 690, 477, 597, 491, 597, 492, 677, 595, 677, 624, 669, 680, 671, 688, 654, 1265, 650, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 478, 362, 491, 379, 496, 513, 480, 511, 478, 403, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(246.5, 762.5)
@@ -52,8 +38,5 @@ shape = SubResource("RectangleShape2D_cuw1j")
 position = Vector2(1581.75, 634)
 shape = SubResource("RectangleShape2D_ai4k6")
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(452, 480, 459, 487, 461, 594, 581, 598, 581, 584, 478, 583, 474, 472, 460, 471)
-
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(706, 440, 708, 537, 1609, 538, 1611, 560, 1640, 560, 1638, 549, 1626, 547, 1624, 522, 724, 522, 722, 433)
+polygon = PackedVector2Array(706, 440, 708, 537, 1606, 538, 1607, 557, 1625, 557, 1624, 574, 1640, 575, 1642, 592, 1659, 592, 1662, 610, 1677, 611, 1678, 617, 1433, 616, 1433, 635, 1732, 635, 1732, 618, 1692, 616, 1691, 599, 1675, 599, 1673, 580, 1658, 578, 1654, 560, 1638, 558, 1637, 543, 1621, 541, 1618, 523, 724, 522, 722, 433)

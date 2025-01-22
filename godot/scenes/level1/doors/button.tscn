@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdyfdupmiw03"]
+
+[ext_resource type="Script" path="res://scenes/level1/doors/button.gd" id="1_frilg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlneh"]
+size = Vector2(46, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk5x7"]
+size = Vector2(42, 32)
+
+[node name="DoorButton" type="StaticBody2D"]
+collision_layer = 16
+script = ExtResource("1_frilg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+offset_left = -19.0
+offset_top = -29.0
+offset_right = 21.0
+offset_bottom = -1.0
+color = Color(0.411765, 0.54902, 0.972549, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_wlneh")
+
+[node name="Trigger" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(1, -32)
+shape = SubResource("RectangleShape2D_uk5x7")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]

@@ -11,18 +11,20 @@ const DASH_COOLDOWN_TIME :float = 1
 
 
 var dash_on_cooldown :bool = false
-var facing_left : bool = false
+var facing_left : bool = false : set = set_facing_left
 var bounce_count : int = 0
 var was_on_floor :bool
 var bounsing := false
 var spawn_position : Vector2
 var _wall_sliding := false : set = set_wall_sliding
-
+var walkning := false : set = set_walking
+var jumping := false : set = set_jumping
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
 @onready var jump_buffer_timer: Timer = %JumpBufferTimer
 @onready var hand_position: Marker2D = %HandPosition
+@onready var animated_sprite_2d: AnimatedSprite2D = %AnimatedSprite2D
 
 func _ready() -> void:
 	spawn_position = position
@@ -60,6 +62,7 @@ func _physics_process(delta: float) -> void:
 		_dash()
 	move_and_slide()
 
+	jumping = not (is_on_floor() or is_on_wall())
 
 func _jump(_delta : float):
 	globals.play_sound("jump")
@@ -111,13 +114,15 @@ func _move(delat: float) :
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
-		if facing_left !=  Input.is_action_pressed("left"):
-			scale.x = -1
-		facing_left =  Input.is_action_pressed("left")
+		#if facing_left !=  Input.is_action_pressed("left"):
+			#animated_sprite_2d.stop()
 		
+		facing_left =  Input.is_action_pressed("left")
+		walkning = true
 	else:
 		velocity.x =  move_toward(velocity.x, 0, SPEED*delat*5)
 		velocity.x = clamp(velocity.x,-SPEED,SPEED)
+		walkning = false
 
 func _dash():
 	if not dash_on_cooldown :
@@ -149,3 +154,86 @@ func set_wall_sliding(value):
 		globals.play_sound_looping("wall_slide", "my_slide_key")
 	else : 
 		globals.stop_sound_looping("my_slide_key") 
+
+func update_animation():
+	
+	if jumping:
+		pass
+	elif walkning:
+		animated_sprite_2d.stop()
+		if facing_left:
+			animated_sprite_2d.play("walk_left")
+		else:
+			animated_sprite_2d.play("walk_right")
+	
+	else: 
+		animated_sprite_2d.stop()
+		if facing_left:
+			animated_sprite_2d.play("idle_left")
+		else:
+			animated_sprite_2d.play("idle_right")
+			
+
+func set_facing_left(value):
+	if value != facing_left:
+		facing_left = value
+		if jumping:
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("fly_left")
+			else:
+				animated_sprite_2d.play("fly_right")
+		elif walkning:
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("walk_left")
+			else:
+				animated_sprite_2d.play("walk_right")
+		else: 
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("idle_left")
+			else:
+				animated_sprite_2d.play("idle_right")
+			
+		
+func set_walking(value):
+	if value != walkning:
+		walkning = value
+		if jumping:
+			pass
+		elif walkning:
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("walk_left")
+			else:
+				animated_sprite_2d.play("walk_right")
+		else: 
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("idle_left")
+			else:
+				animated_sprite_2d.play("idle_right")
+	
+func set_jumping(value):
+	if value != jumping:
+		jumping = value
+		animated_sprite_2d.stop()
+		if jumping:
+			if facing_left:
+				animated_sprite_2d.play("jump_left")
+			else:
+				animated_sprite_2d.play("jump_right")	
+		elif walkning:
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("walk_left")
+			else:
+				animated_sprite_2d.play("walk_right")
+		else: 
+			animated_sprite_2d.stop()
+			if facing_left:
+				animated_sprite_2d.play("idle_left")
+			else:
+				animated_sprite_2d.play("idle_right")
+	

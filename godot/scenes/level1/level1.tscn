@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=26 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
@@ -17,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dfaaowosboqfk" path="res://assets/images/objects/door_horizontal_box_and_flint.png" id="15_y6im4"]
 [ext_resource type="Texture2D" uid="uid://coaafbpu22q4t" path="res://assets/images/objects/door_upper_right.png" id="16_sunmh"]
 [ext_resource type="Texture2D" uid="uid://dm08rnnyh3cys" path="res://assets/images/objects/door_vertical_box.png" id="17_ddjf5"]
+[ext_resource type="Texture2D" uid="uid://cj1j75x1acin3" path="res://assets/images/objects/rope_from_gunpowder_to_spring.png" id="18_3ao5b"]
+[ext_resource type="Texture2D" uid="uid://dcc1l2ftd1q" path="res://assets/images/objects/spring_sprung.png" id="19_p2b8a"]
+[ext_resource type="Texture2D" uid="uid://ckl17rj74fuxy" path="res://assets/images/objects/spring_unsprung.png" id="20_6woqm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83c7m"]
 radius = 22.0907
@@ -58,22 +61,19 @@ one_shot = true
 autostart = true
 
 [node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 1, 1, 0.3)
 position = Vector2(522, 722)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
 _texture = ExtResource("5_a8vkl")
 
 [node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 1, 1, 0.3)
 position = Vector2(517, 554)
 loose_pice = NodePath("../LoosePice2")
 _id = "B"
 _texture = ExtResource("6_8ailn")
 
 [node name="HomePosition3" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("5_d34i5")]
-modulate = Color(1, 1, 1, 0.3)
-position = Vector2(783, 494)
+position = Vector2(767, 495)
 loose_pice = NodePath("../LoosePice3")
 _id = "A"
 _texture = ExtResource("7_n4mbl")
@@ -82,7 +82,8 @@ _texture = ExtResource("7_n4mbl")
 position = Vector2(64, 578)
 _id = "C"
 _texture = ExtResource("10_1mkss")
-_throw_power = null
+_throw_power = 300.0
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
 polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
@@ -91,7 +92,8 @@ polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
 position = Vector2(1577, 590)
 _id = "B"
 _texture = ExtResource("9_lgp8j")
-_throw_power = null
+_throw_power = 300.0
+metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice2"]
 polygon = PackedVector2Array(-15, -1, -9, 14, 0, 27, 10, 15, 15, 0, 10, -16, 1, -28, -9, -15)
@@ -100,7 +102,8 @@ polygon = PackedVector2Array(-15, -1, -9, 14, 0, 27, 10, 15, 15, 0, 10, -16, 1, 
 position = Vector2(1856, 705)
 _id = "A"
 _texture = ExtResource("6_lu112")
-_throw_power = null
+_throw_power = 300.0
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice3"]
 shape = SubResource("CircleShape2D_83c7m")
@@ -140,15 +143,15 @@ position = Vector2(853, -289)
 polygon = PackedVector2Array(148, 805, 165, 802, 183, 805, 183, 816, 148, 818)
 
 [node name="button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
-position = Vector2(1484, 621)
+position = Vector2(1315, 738)
 door = NodePath("../Door")
 
 [node name="button2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
-position = Vector2(1118, 735)
+position = Vector2(1472, 618)
 door = NodePath("../Door2")
 
 [node name="button3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
-position = Vector2(1048, 736)
+position = Vector2(850, 524)
 door = NodePath("../Door3")
 
 [node name="button4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("7_wkms2")]
@@ -158,6 +161,7 @@ door = NodePath("../Door4")
 [node name="Door" parent="." instance=ExtResource("8_bvmn0")]
 position = Vector2(523, 680)
 _texture = ExtResource("15_y6im4")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(-0.5, 0)
@@ -166,14 +170,16 @@ shape = SubResource("RectangleShape2D_tjo40")
 [node name="Door2" parent="." instance=ExtResource("8_bvmn0")]
 position = Vector2(896, 492)
 _texture = ExtResource("16_sunmh")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Door2"]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_xxwdp")
 
 [node name="Door3" parent="." instance=ExtResource("8_bvmn0")]
-position = Vector2(525, 593)
+position = Vector2(523, 604)
 _texture = ExtResource("15_y6im4")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
 shape = SubResource("RectangleShape2D_684gc")
@@ -181,9 +187,23 @@ shape = SubResource("RectangleShape2D_684gc")
 [node name="Door4" parent="." instance=ExtResource("8_bvmn0")]
 position = Vector2(581, 725)
 _texture = ExtResource("17_ddjf5")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_emi5l")
+
+[node name="RopeFromGunpowderToSpring" type="Sprite2D" parent="."]
+position = Vector2(620, 609)
+texture = ExtResource("18_3ao5b")
+
+[node name="SpringSprung" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(748, 493)
+texture = ExtResource("19_p2b8a")
+
+[node name="SpringUnsprung" type="Sprite2D" parent="."]
+position = Vector2(734, 495)
+texture = ExtResource("20_6woqm")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

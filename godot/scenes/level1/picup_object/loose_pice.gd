@@ -59,13 +59,12 @@ func _input(event: InputEvent) -> void:
 			
 func _throw(charge : float):
 	freeze = false
-	attatched_to = null
+	
 	globals.play_sound("throw")
 	var throw_vect = Vector2(1,-1) * charge*_throw_power #+ Vector2(0,-1000)
-	if rotation > PI/2:
+	if attatched_to.facing_left:
 		throw_vect.x *= -1
-		
-	print(throw_vect)
+	attatched_to = null	
 	apply_central_impulse(throw_vect)
 	
 

@@ -2,14 +2,18 @@
 class_name LoosePice
 extends RigidBody2D
 
+const MAX_THROW_CHARGE_TIME : float =1.5
+
 @export var _id : String : set = set_id
 @export var _texture : Texture2D : set = set_texture
+@export var _throw_power : float = 300
 
 #var _lock_transform : Transform2D 
 #var _locked := false
 var attatched_to : Player = null : set = set_attached_to
 var _spaw_position : Transform2D 
-
+var _throw_charge : float = 0
+var _charging_throw := false
 
 @onready var picup_area_2d: Area2D = %PicupArea2D
 #@onready var home_position: HomePosition = %HomePosition
@@ -21,35 +25,49 @@ func _ready() -> void:
 	set_texture(_texture)
 	_spaw_position = transform
 
-func _integrate_forces(_state):
-	if attatched_to != null:
-		#if global_position.distance_to(attatched_to.global_position) > 10 :
-			#apply_central_impulse(attatched_to.global_position.direction_to(global_position) * -700)   
-		#freeze_mode = FreezeMode.FREEZE_MODE_KINEMATIC
-		#freeze = true
+func _process(delta: float) -> void:
+	
+	if _charging_throw:
+		_throw_charge += delta
+		_throw_charge = clamp(_throw_charge,0,MAX_THROW_CHARGE_TIME)
+	
+		if Input.is_action_just_released("use") :
+			_throw(_throw_charge)
+			_charging_throw = false
+			_throw_charge = 0
+			globals.stop_sound_looping("charging_throw_key")
+			
+			
+	if is_instance_valid(attatched_to):
+		freeze = true
 		global_transform = attatched_to.get_global_hand_transform()
-	#else :
-		#freeze = false 
-
+	else :
+		freeze = false
 			
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("use"):
 		if attatched_to == null:
-			print("overlap",picup_area_2d.get_overlapping_bodies())
 			for player in picup_area_2d.get_overlapping_bodies():
 				if player is Player:
 					attatched_to = player
 					globals.play_sound("pickup")
-					sleeping = false
-		else :
-			attatched_to = null
-			_throw()
-func _throw():
+					#sleeping = false
+		else: 
+			_charging_throw = true
+			globals.play_sound_looping("wall_slide", "charging_throw_key")
+
+			
+func _throw(charge : float):
+	freeze = false
+	attatched_to = null
 	globals.play_sound("throw")
+	var throw_vect = Vector2(1,-1) * charge*_throw_power #+ Vector2(0,-1000)
 	if rotation > PI/2:
-		apply_central_impulse(Vector2(-300,-300))
-	else : 
-		apply_central_impulse(Vector2(300,-300))	
+		throw_vect.x *= -1
+		
+	print(throw_vect)
+	apply_central_impulse(throw_vect)
+	
 
 #func eject(force : Vector2):
 	#unlock()
@@ -75,12 +93,14 @@ func _on_body_entered(_body: Node) -> void:
 
 func set_attached_to(value):
 	if value == null:
+		
 		if is_instance_valid(attatched_to):
 			attatched_to.drop_items.disconnect(respawn)
 		attatched_to = value
 	else : 
 		attatched_to = value
 		attatched_to.drop_items.connect(respawn)
+
 		
 
 func respawn():

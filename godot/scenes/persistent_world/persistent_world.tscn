@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://6ha7toalxvjw" path="res://resources/sound_effects/hit_wood.tres" id="8_8ujl0"]
 [ext_resource type="Resource" uid="uid://b5ll76mlg2cke" path="res://resources/sound_effects/throw.tres" id="9_vcyii"]
 [ext_resource type="Resource" uid="uid://0spyh38in14r" path="res://resources/sound_effects/pickup.tres" id="10_c8odm"]
-[ext_resource type="Resource" path="res://resources/sound_effects/wall_slide.tres" id="11_gtj4d"]
+[ext_resource type="Resource" uid="uid://b25ldaflpcuhi" path="res://resources/sound_effects/wall_slide.tres" id="11_gtj4d"]
 
 [sub_resource type="Resource" id="Resource_wbh1l"]
 script = ExtResource("2_fnxn6")

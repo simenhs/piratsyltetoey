@@ -9,6 +9,7 @@ const SLIDE_DOWN_SPEED :float= 50
 const DASH_SPEED :float= 10000
 const DASH_COOLDOWN_TIME :float = 1
 
+
 var dash_on_cooldown :bool = false
 var facing_left : bool = false
 var bounce_count : int = 0

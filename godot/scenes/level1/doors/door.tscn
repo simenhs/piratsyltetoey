@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c43e85p31p2nv"]
+[gd_scene load_steps=2 format=3 uid="uid://c43e85p31p2nv"]
 
 [ext_resource type="Script" path="res://scenes/level1/doors/door.gd" id="1_g5iq4"]
-[ext_resource type="Texture2D" uid="uid://coaafbpu22q4t" path="res://assets/images/objects/door_upper_right.png" id="2_xiv4x"]
 
 [node name="Door" type="StaticBody2D"]
 collision_layer = 32
@@ -9,4 +8,3 @@ script = ExtResource("1_g5iq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_xiv4x")

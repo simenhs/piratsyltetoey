@@ -55,3 +55,6 @@ func set_texture(value):
 	_texture = value
 	if is_instance_valid(sprite_2d):
 		sprite_2d.texture = _texture
+
+func objective_compleated():
+	return _attract 

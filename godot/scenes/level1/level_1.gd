@@ -10,6 +10,7 @@ var _game_won = false
 @onready var timer: Timer = $Timer
 #@onready var win_label: Label = %WinLabel
 #@onready var loos_label: Label = %LoosLabel
+@onready var temp_end_screen: AnimatedSprite2D = %TempEndScreen
 
 
 func _input(event: InputEvent) -> void:
@@ -21,18 +22,24 @@ func _process(_delta: float) -> void:
 	timer_label.text = str(timer.time_left).pad_decimals(1)
 	
 	var all_objects_fixed = true
-	for c in get_children():
-		if c is PickupObject:
-			if not c.is_fixed():
+	for h in get_children():
+		if h is HomePosition:
+			if not h.objective_compleated():
 				all_objects_fixed = false
 	
 	if all_objects_fixed:
 		game_won.emit()
 		#win_label.show()
-		_game_won = true
+		if not _game_won:
+			temp_end_screen.show()
+			temp_end_screen.play("Win")
+			_game_won = true
 
 
 func _on_timer_timeout() -> void:
-	if not game_won:
+	
+	if not _game_won:
 		game_lost.emit()
 		#loos_label.show()
+		temp_end_screen.show()
+		temp_end_screen.play("Lose")

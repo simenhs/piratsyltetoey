@@ -31,6 +31,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
+	for a  in picup_area_2d.get_overlapping_bodies():
+		if a is Door:
+			sleeping = false
+			
 	if _charging_throw:
 		_throw_charge += delta
 		_throw_charge = clamp(_throw_charge,0,MAX_THROW_CHARGE_TIME)
@@ -121,8 +125,10 @@ func set_texture(value):
 	
 
 func _on_picup_area_2d_body_entered(body: Node2D) -> void:
-	player_nearby_enter.emit()
+	if body is Player:
+		player_nearby_enter.emit()
 
 
 func _on_picup_area_2d_body_exited(body: Node2D) -> void:
-	player_nearby_exit.emit()
+	if body is Player:
+		player_nearby_exit.emit()

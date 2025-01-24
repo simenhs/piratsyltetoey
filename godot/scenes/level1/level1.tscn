@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dots7kewpqnio"]
+[gd_scene load_steps=29 format=3 uid="uid://dots7kewpqnio"]
 
 [ext_resource type="PackedScene" uid="uid://dmnhro72jpck8" path="res://scenes/level1/world/world.tscn" id="1_cwunv"]
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_rsi31"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cj1j75x1acin3" path="res://assets/images/objects/rope_from_gunpowder_to_spring.png" id="18_3ao5b"]
 [ext_resource type="Texture2D" uid="uid://dcc1l2ftd1q" path="res://assets/images/objects/spring_sprung.png" id="19_p2b8a"]
 [ext_resource type="Texture2D" uid="uid://ckl17rj74fuxy" path="res://assets/images/objects/spring_unsprung.png" id="20_6woqm"]
+[ext_resource type="PackedScene" uid="uid://ba0j3t7nng262" path="res://scenes/level1/background_music_controller/background_music_controller.tscn" id="21_4kl3x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83c7m"]
 radius = 22.0907
@@ -35,6 +36,12 @@ size = Vector2(126, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emi5l"]
 size = Vector2(10, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrooy"]
+size = Vector2(14, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crvsm"]
+size = Vector2(190, 126)
 
 [node name="Level1" type="Node"]
 process_mode = 3
@@ -79,10 +86,9 @@ _id = "A"
 _texture = ExtResource("7_n4mbl")
 
 [node name="LoosePice" parent="." instance=ExtResource("6_ij8bl")]
-position = Vector2(64, 578)
+position = Vector2(102, 582)
 _id = "C"
 _texture = ExtResource("10_1mkss")
-_throw_power = 300.0
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
@@ -92,7 +98,6 @@ polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
 position = Vector2(1577, 590)
 _id = "B"
 _texture = ExtResource("9_lgp8j")
-_throw_power = 300.0
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice2"]
@@ -102,7 +107,6 @@ polygon = PackedVector2Array(-15, -1, -9, 14, 0, 27, 10, 15, 15, 0, 10, -16, 1, 
 position = Vector2(1856, 705)
 _id = "A"
 _texture = ExtResource("6_lu112")
-_throw_power = 300.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice3"]
@@ -205,5 +209,25 @@ texture = ExtResource("19_p2b8a")
 [node name="SpringUnsprung" type="Sprite2D" parent="."]
 position = Vector2(734, 495)
 texture = ExtResource("20_6woqm")
+
+[node name="BackgroundMusic_controller" parent="." node_paths=PackedStringArray("move_zone", "jump_zone", "loose_objects") instance=ExtResource("21_4kl3x")]
+move_zone = NodePath("MoveHelpArea")
+jump_zone = NodePath("JumpHelpArea")
+loose_objects = [NodePath("../LoosePice"), NodePath("../LoosePice2"), NodePath("../LoosePice3")]
+
+[node name="MoveHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/MoveHelpArea"]
+position = Vector2(45, 776)
+shape = SubResource("RectangleShape2D_xrooy")
+
+[node name="JumpHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
+position = Vector2(66, -4)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
+position = Vector2(130, 751)
+shape = SubResource("RectangleShape2D_crvsm")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

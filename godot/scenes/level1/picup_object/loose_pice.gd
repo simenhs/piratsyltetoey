@@ -2,6 +2,10 @@
 class_name LoosePice
 extends RigidBody2D
 
+signal player_nearby_enter
+signal player_nearby_exit
+signal picked_up
+
 const MAX_THROW_CHARGE_TIME : float =1.5
 
 @export var _id : String : set = set_id
@@ -51,6 +55,7 @@ func _input(event: InputEvent) -> void:
 				if player is Player:
 					attatched_to = player
 					globals.play_sound("pickup")
+					picked_up.emit()
 					#sleeping = false
 		else: 
 			_charging_throw = true
@@ -114,3 +119,10 @@ func set_texture(value):
 	if is_instance_valid(sprite_2d):
 		sprite_2d.texture = _texture
 	
+
+func _on_picup_area_2d_body_entered(body: Node2D) -> void:
+	player_nearby_enter.emit()
+
+
+func _on_picup_area_2d_body_exited(body: Node2D) -> void:
+	player_nearby_exit.emit()

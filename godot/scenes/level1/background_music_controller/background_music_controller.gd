@@ -7,7 +7,7 @@ extends Node
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 var sync_player : AudioStreamSynchronized
 
-
+var playing_bg = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,10 +31,12 @@ func mute_steams():
 func play_bg():
 	mute_steams()
 	sync_player.set_sync_stream_volume(0,0)
+	playing_bg = true
 	
 func play_melody1():
 	play_bg()
 	sync_player.set_sync_stream_volume(1,0)
+	
 	
 func play_melody2():
 	play_bg()
@@ -47,15 +49,34 @@ func play_melody3():
 func play_help_jump():
 	play_bg()
 	sync_player.set_sync_stream_volume(4,0)
+	playing_bg = false
 	
 func play_help_move():
 	play_bg()
 	sync_player.set_sync_stream_volume(5,0)
+	playing_bg = false
 	
 func play_help_pick_up():
 	play_bg()
 	sync_player.set_sync_stream_volume(6,0)
+	playing_bg = false
 	
 func play_help_throw():
 	play_bg()
 	sync_player.set_sync_stream_volume(7,0)
+	playing_bg = false
+
+
+func _on_timer_timeout() -> void:
+	if playing_bg:
+		if randf() < 0.5:
+			var pick = randi_range(0,2)
+			match pick:
+				1: 
+					play_melody1()
+				2: 
+					play_melody2()
+				3: 
+					play_melody3()
+		else :
+			play_bg()

@@ -67,7 +67,7 @@ size = Vector2(190, 126)
 [sub_resource type="SpriteFrames" id="SpriteFrames_dc4vt"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 45.0,
 "texture": ExtResource("22_07ely")
 }, {
 "duration": 1.0,
@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("30_0qtnm")
 }, {
-"duration": 1.0,
+"duration": 45.0,
 "texture": ExtResource("31_7hpjv")
 }, {
 "duration": 1.0,
@@ -102,10 +102,10 @@ animations = [{
 }],
 "loop": false,
 "name": &"Lose",
-"speed": 10.0
+"speed": 30.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 45.0,
 "texture": ExtResource("33_homjp")
 }, {
 "duration": 1.0,
@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("40_khmmw")
 }, {
-"duration": 1.0,
+"duration": 45.0,
 "texture": ExtResource("41_uyl7c")
 }, {
 "duration": 1.0,
@@ -137,7 +137,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Win",
-"speed": 10.0
+"speed": 30.0
 }]
 
 [node name="Level1" type="Node"]
@@ -160,7 +160,7 @@ text = "20.0"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 45000.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 

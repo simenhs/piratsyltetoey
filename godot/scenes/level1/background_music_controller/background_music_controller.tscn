@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://ba0j3t7nng262"]
 
 [ext_resource type="Script" path="res://scenes/level1/background_music_controller/background_music_controller.gd" id="1_owv0m"]
-[ext_resource type="AudioStream" uid="uid://cgwrlcabhn6cg" path="res://assets/audio/loop1/loop1_floor.wav" id="2_2rpel"]
-[ext_resource type="AudioStream" uid="uid://umrx05efvnr8" path="res://assets/audio/loop1/loop1_melody_simple.wav" id="3_uelyg"]
-[ext_resource type="AudioStream" uid="uid://bwoxmukg70dxw" path="res://assets/audio/loop1/loop1_melody_1.wav" id="4_ww1ch"]
-[ext_resource type="AudioStream" uid="uid://5hytuep0foy2" path="res://assets/audio/loop1/loop1_melody_2.wav" id="5_r7474"]
+[ext_resource type="AudioStream" uid="uid://7yc38ut7y0iy" path="res://assets/audio/loop1/loop1_floor.wav" id="2_2rpel"]
+[ext_resource type="AudioStream" uid="uid://3ik8brjku7bx" path="res://assets/audio/loop1/loop1_melody_simple.wav" id="3_uelyg"]
+[ext_resource type="AudioStream" uid="uid://d04yr3reynnxv" path="res://assets/audio/loop1/loop1_melody_1.wav" id="4_ww1ch"]
+[ext_resource type="AudioStream" uid="uid://cv0305w3ufbj5" path="res://assets/audio/loop1/loop1_melody_2.wav" id="5_r7474"]
 [ext_resource type="AudioStream" uid="uid://cn2ke65qvo446" path="res://assets/audio/loop1/loop1_press_space.wav" id="6_e6ks3"]
 [ext_resource type="AudioStream" uid="uid://ddoxpbwgh0aaw" path="res://assets/audio/loop1/loop1_press_a_and_d.wav" id="7_l23u4"]
 [ext_resource type="AudioStream" uid="uid://ds0xjfctnmjk" path="res://assets/audio/loop1/loop1_pick_it_up.wav" id="8_1bsrf"]
@@ -36,3 +36,9 @@ script = ExtResource("1_owv0m")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamSynchronized_jub8u")
 autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

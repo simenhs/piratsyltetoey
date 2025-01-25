@@ -160,7 +160,7 @@ text = "20.0"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 45.0
 one_shot = true
 autostart = true
 

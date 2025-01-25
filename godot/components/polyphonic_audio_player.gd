@@ -6,7 +6,7 @@ var looping_streams: Dictionary
 
 func _ready() -> void:
 	stream = AudioStreamPolyphonic.new()
-	var level_scene = load("res://scenes/level1/level1.tscn").instantiate()
+	var level_scene = load("res://scenes/level1/level2.tscn").instantiate()
 	$"../current_level_root".add_child(level_scene)
 
 func _process(_delta: float) -> void:

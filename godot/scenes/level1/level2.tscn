@@ -1,0 +1,323 @@
+[gd_scene load_steps=43 format=3 uid="uid://y5w8ytid2tgy"]
+
+[ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_lpcwg"]
+[ext_resource type="PackedScene" uid="uid://cb02wyobajoxx" path="res://scenes/level1/world/world2.tscn" id="2_huxru"]
+[ext_resource type="PackedScene" uid="uid://qboe47l73lll" path="res://scenes/level1/player/player.tscn" id="3_tqm2y"]
+[ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="4_33i86"]
+[ext_resource type="Texture2D" uid="uid://biko0m1vbdbjg" path="res://assets/images/objects/placeholder_gunpowder.png" id="5_bf8ti"]
+[ext_resource type="Texture2D" uid="uid://crca8vg6yu2b5" path="res://assets/images/objects/placeholder_flint.png" id="6_y8qhv"]
+[ext_resource type="Texture2D" uid="uid://dyt1dghhti3dr" path="res://assets/images/objects/placeholder_bullet.png" id="7_hgusn"]
+[ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="8_1ctgv"]
+[ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="9_t7u2k"]
+[ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="10_fwvv3"]
+[ext_resource type="Texture2D" uid="uid://cv43v436joiqw" path="res://assets/images/objects/bullet.png" id="11_5d63q"]
+[ext_resource type="PackedScene" uid="uid://cns7qe6d4pkwi" path="res://scenes/level1/spikes/spikes.tscn" id="12_gdyw0"]
+[ext_resource type="PackedScene" uid="uid://dgdyfdupmiw03" path="res://scenes/level1/doors/button.tscn" id="13_vkn5b"]
+[ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="14_2p3pv"]
+[ext_resource type="Texture2D" uid="uid://dm08rnnyh3cys" path="res://assets/images/objects/door_vertical_box.png" id="17_7h6gi"]
+[ext_resource type="PackedScene" uid="uid://ba0j3t7nng262" path="res://scenes/level1/background_music_controller/background_music_controller.tscn" id="21_yvqt8"]
+[ext_resource type="Texture2D" uid="uid://dh0np0bacjkj8" path="res://assets/images/lose_animation/lose_1.png" id="22_vlmvi"]
+[ext_resource type="Texture2D" uid="uid://crh56aebqotks" path="res://assets/images/lose_animation/lose_2.png" id="23_o8780"]
+[ext_resource type="Texture2D" uid="uid://cbg247m8r1fuv" path="res://assets/images/lose_animation/lose_3.png" id="24_qnkob"]
+[ext_resource type="Texture2D" uid="uid://d0mpox3x7p7bp" path="res://assets/images/lose_animation/lose_4.png" id="25_dl1po"]
+[ext_resource type="Texture2D" uid="uid://b4u4iuiacnla0" path="res://assets/images/lose_animation/lose_5.png" id="26_2jlok"]
+[ext_resource type="Texture2D" uid="uid://c0eoci0vscpyt" path="res://assets/images/lose_animation/lose_6.png" id="27_la2h3"]
+[ext_resource type="Texture2D" uid="uid://dykfdj35cu0ox" path="res://assets/images/lose_animation/lose_7.png" id="28_piwx8"]
+[ext_resource type="Texture2D" uid="uid://cahqpglh33pv6" path="res://assets/images/lose_animation/lose_8.png" id="29_e7j1b"]
+[ext_resource type="Texture2D" uid="uid://d0ovkc16m74fd" path="res://assets/images/lose_animation/lose_9.png" id="30_g0g4j"]
+[ext_resource type="Texture2D" uid="uid://ds85g458vwcqc" path="res://assets/images/lose_animation/lose_10.png" id="31_xkyqq"]
+[ext_resource type="Texture2D" uid="uid://rq84wn6jsiqe" path="res://assets/images/menu/defeat_screen.png" id="32_1ut0t"]
+[ext_resource type="Texture2D" uid="uid://dqnolkavs1sw3" path="res://assets/images/win_animation/win_1.png" id="33_54fib"]
+[ext_resource type="Texture2D" uid="uid://g24ola8lyqa0" path="res://assets/images/win_animation/win_2.png" id="34_a4x10"]
+[ext_resource type="Texture2D" uid="uid://cdslv8w86cwxi" path="res://assets/images/win_animation/win_3.png" id="35_rv1a0"]
+[ext_resource type="Texture2D" uid="uid://fckc82td6kcc" path="res://assets/images/win_animation/win_4.png" id="36_hk5vq"]
+[ext_resource type="Texture2D" uid="uid://drdguvmeq87cl" path="res://assets/images/win_animation/win_5.png" id="37_2kvhd"]
+[ext_resource type="Texture2D" uid="uid://dnb7vkdql3ba" path="res://assets/images/win_animation/win_6.png" id="38_cv7kq"]
+[ext_resource type="Texture2D" uid="uid://nx5ndfnn1d0a" path="res://assets/images/win_animation/win_7.png" id="39_uyhf0"]
+[ext_resource type="Texture2D" uid="uid://8tsuj2ox6ggb" path="res://assets/images/win_animation/win_8.png" id="40_rj8bv"]
+[ext_resource type="Texture2D" uid="uid://bx6bt3x6i6q27" path="res://assets/images/win_animation/win_9.png" id="41_45l11"]
+[ext_resource type="Texture2D" uid="uid://by73s7bx4angn" path="res://assets/images/menu/victory_screen.png" id="42_125ag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83c7m"]
+radius = 22.0907
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjo40"]
+size = Vector2(11, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrooy"]
+size = Vector2(14, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crvsm"]
+size = Vector2(96, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dc4vt"]
+animations = [{
+"frames": [{
+"duration": 45.0,
+"texture": ExtResource("22_vlmvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o8780")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qnkob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_dl1po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_2jlok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_la2h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_piwx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_e7j1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_g0g4j")
+}, {
+"duration": 45.0,
+"texture": ExtResource("31_xkyqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1ut0t")
+}],
+"loop": false,
+"name": &"Lose",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 45.0,
+"texture": ExtResource("33_54fib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_a4x10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_rv1a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hk5vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2kvhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_cv7kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uyhf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rj8bv")
+}, {
+"duration": 45.0,
+"texture": ExtResource("41_45l11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_125ag")
+}],
+"loop": false,
+"name": &"Win",
+"speed": 30.0
+}]
+
+[node name="Level2" type="Node"]
+process_mode = 3
+script = ExtResource("1_lpcwg")
+
+[node name="World2" parent="." instance=ExtResource("2_huxru")]
+
+[node name="Player" parent="." instance=ExtResource("3_tqm2y")]
+position = Vector2(53, 808)
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 966.0
+offset_top = 590.0
+offset_right = 1534.0
+offset_bottom = 658.0
+theme_override_font_sizes/font_size = 64
+text = "20.0"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
+position = Vector2(639, 539)
+loose_pice = NodePath("../LoosePice")
+_id = "C"
+_texture = ExtResource("5_bf8ti")
+
+[node name="HomePosition4" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
+position = Vector2(1175, 544)
+loose_pice = NodePath("../LoosePice4")
+_id = "C"
+_texture = ExtResource("5_bf8ti")
+
+[node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
+position = Vector2(1814, 523)
+loose_pice = NodePath("../LoosePice2")
+_id = "B"
+_texture = ExtResource("6_y8qhv")
+
+[node name="HomePosition3" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
+position = Vector2(336, 809)
+loose_pice = NodePath("../LoosePice3")
+_id = "A"
+_texture = ExtResource("7_hgusn")
+
+[node name="LoosePice" parent="." instance=ExtResource("8_1ctgv")]
+position = Vector2(79, 631)
+_id = "C"
+_texture = ExtResource("9_t7u2k")
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
+polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
+
+[node name="LoosePice4" parent="." instance=ExtResource("8_1ctgv")]
+position = Vector2(939, 710)
+_id = "C"
+_texture = ExtResource("9_t7u2k")
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice4"]
+polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
+
+[node name="LoosePice2" parent="." instance=ExtResource("8_1ctgv")]
+position = Vector2(1252, 543)
+_id = "B"
+_texture = ExtResource("10_fwvv3")
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice2"]
+polygon = PackedVector2Array(-15, -1, -9, 14, 0, 27, 10, 15, 15, 0, 10, -16, 1, -28, -9, -15)
+
+[node name="LoosePice3" parent="." instance=ExtResource("8_1ctgv")]
+position = Vector2(265, 805)
+_id = "A"
+_texture = ExtResource("11_5d63q")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LoosePice3"]
+shape = SubResource("CircleShape2D_83c7m")
+
+[node name="Spikes" parent="." instance=ExtResource("12_gdyw0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes"]
+position = Vector2(-61, -124)
+polygon = PackedVector2Array(215, 798, 252, 798, 252, 806, 215, 807)
+
+[node name="Spikes2" parent="." instance=ExtResource("12_gdyw0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes2"]
+position = Vector2(49, -122)
+polygon = PackedVector2Array(215, 798, 282, 797, 283, 807, 215, 807)
+
+[node name="Spikes3" parent="." instance=ExtResource("12_gdyw0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes3"]
+position = Vector2(500, -113)
+polygon = PackedVector2Array(215, 798, 240, 799, 238, 807, 215, 807)
+
+[node name="Spikes4" parent="." instance=ExtResource("12_gdyw0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes4"]
+position = Vector2(1096, -340)
+polygon = PackedVector2Array(212, 798, 220, 798, 218, 927, 210, 926)
+
+[node name="Spikes5" parent="." instance=ExtResource("12_gdyw0")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes5"]
+position = Vector2(1682, -344)
+polygon = PackedVector2Array(212, 798, 220, 798, 220, 933, 77, 942, 80, 1078, 74, 1077, 66, 932, 211, 923)
+
+[node name="button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
+position = Vector2(841, 739)
+door = NodePath("../Door2")
+
+[node name="button4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
+position = Vector2(1581, 563)
+door = NodePath("../Door4")
+
+[node name="button3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
+position = Vector2(1120, 582)
+door = NodePath("../Door3")
+
+[node name="button2" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
+position = Vector2(855, 527)
+door = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("14_2p3pv")]
+position = Vector2(1071, 702)
+_texture = ExtResource("17_7h6gi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tjo40")
+
+[node name="Door3" parent="." instance=ExtResource("14_2p3pv")]
+position = Vector2(628, 729)
+_texture = ExtResource("17_7h6gi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door3"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tjo40")
+
+[node name="Door4" parent="." instance=ExtResource("14_2p3pv")]
+position = Vector2(1737, 496)
+_texture = ExtResource("17_7h6gi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door4"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tjo40")
+
+[node name="Door2" parent="." instance=ExtResource("14_2p3pv")]
+position = Vector2(1074, 553)
+_texture = ExtResource("17_7h6gi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_tjo40")
+
+[node name="BackgroundMusic_controller" parent="." node_paths=PackedStringArray("move_zone", "jump_zone", "loose_objects") instance=ExtResource("21_yvqt8")]
+move_zone = NodePath("MoveHelpArea")
+jump_zone = NodePath("JumpHelpArea")
+loose_objects = [NodePath("../LoosePice"), NodePath("../LoosePice2"), NodePath("../LoosePice3")]
+
+[node name="MoveHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/MoveHelpArea"]
+position = Vector2(56, 815)
+shape = SubResource("RectangleShape2D_xrooy")
+
+[node name="JumpHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
+position = Vector2(66, -4)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
+position = Vector2(56, 851)
+shape = SubResource("RectangleShape2D_crvsm")
+
+[node name="TempEndScreen" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(929, 544)
+scale = Vector2(0.373194, 0.373194)
+sprite_frames = SubResource("SpriteFrames_dc4vt")
+animation = &"Win"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

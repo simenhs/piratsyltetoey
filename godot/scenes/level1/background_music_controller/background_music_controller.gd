@@ -11,6 +11,7 @@ var playing_bg = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	audio_stream_player.volume_db = linear_to_db(globals.DEFAULT_MUSIC_VOLUME)
 	sync_player = audio_stream_player.stream
 	play_help_move()
 	move_zone.body_exited.connect(func (b): play_bg())

@@ -2,11 +2,11 @@ extends Node
 
 var RNG = RandomNumberGenerator.new()
 var WORLD_ROOT = null
+var DEFAULT_MUSIC_VOLUME := 0.0
 
 func _ready():
 	RNG.seed = hash("tosiso")
 	WORLD_ROOT = get_tree().root.get_node("persistent_world")
-	print(WORLD_ROOT.name)
 
 func play_sound(sound_name: String) -> bool:
 	if not sound_name:

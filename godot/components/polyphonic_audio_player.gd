@@ -6,8 +6,6 @@ var looping_streams: Dictionary
 
 func _ready() -> void:
 	stream = AudioStreamPolyphonic.new()
-	var level_scene = load("res://scenes/level1/level1.tscn").instantiate()
-	$"../current_level_root".add_child(level_scene)
 
 func _process(_delta: float) -> void:
 	if not playing:
@@ -16,7 +14,7 @@ func _process(_delta: float) -> void:
 	var polyphonic_stream_playback := self.get_stream_playback()
 	for key in looping_streams:
 		if not polyphonic_stream_playback.is_stream_playing(looping_streams[key][0]):
-			looping_streams[key][0] = polyphonic_stream_playback.play_stream(looping_streams[key][1])
+			looping_streams[key][0] = polyphonic_stream_playback.play_stream(audio_library.get_audio_stream(looping_streams[key][1]))
 
 func play_sound(sound_name: String) -> bool:
 	if sound_name:
@@ -47,7 +45,7 @@ func play_sound_looping(sound_name: String, key: String) -> bool:
 		
 		var polyphonic_stream_playback := self.get_stream_playback()
 		var play_id = polyphonic_stream_playback.play_stream(audio_stream)
-		looping_streams[key] = [play_id, audio_stream]
+		looping_streams[key] = [play_id, sound_name]
 		return true
 	else:
 		printerr("soundname is invalid, cannot play sound effect.")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://vuy67oyr2buv"]
+[gd_scene load_steps=14 format=3 uid="uid://vuy67oyr2buv"]
 
+[ext_resource type="Script" path="res://scenes/persistent_world/persistent_world.gd" id="1_d0fmm"]
 [ext_resource type="PackedScene" uid="uid://2rx5e74o2ywa" path="res://components/polyphonic_audio_player.tscn" id="1_jjo3n"]
 [ext_resource type="Script" path="res://scripts/custom_resource_bases/audio_library.gd" id="2_fnxn6"]
 [ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="3_kbgrk"]
@@ -17,6 +18,7 @@ script = ExtResource("2_fnxn6")
 sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii"), ExtResource("10_c8odm"), ExtResource("11_gtj4d")])
 
 [node name="persistent_world" type="Node2D"]
+script = ExtResource("1_d0fmm")
 
 [node name="polyphonic_audio_player" parent="." instance=ExtResource("1_jjo3n")]
 audio_library = SubResource("Resource_wbh1l")

@@ -65,7 +65,7 @@ func _input(event: InputEvent) -> void:
 						#sleeping = false
 		else: 
 			_charging_throw = true
-			globals.play_sound_looping("wall_slide", "charging_throw_key")
+			globals.play_sound_looping("charge_throw", "charging_throw_key")
 
 			
 func _throw(charge : float):

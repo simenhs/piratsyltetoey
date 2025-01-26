@@ -19,10 +19,11 @@ func _on_trigger_body_entered(_body: Node2D) -> void:
 	#if scale.y > 0.5: 
 		#var tween = create_tween()
 		#tween.tween_property(self,"scale:y",0.5,1)
+	if trigger.get_overlapping_bodies().size() ==  1:
+		globals.play_sound("button_down")
 	modulate = Color.GREEN
 	button_sprite.hide()
 	button_pressed_sprite.show()
-	globals.play_sound("button_down")
 	door.open()
 
 

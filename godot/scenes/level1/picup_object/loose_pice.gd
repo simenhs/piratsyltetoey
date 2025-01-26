@@ -73,9 +73,11 @@ func _throw(charge : float):
 	
 	globals.play_sound("throw")
 	var throw_vect = Vector2(1,-1) * charge*_throw_power #+ Vector2(0,-1000)
-	if attatched_to.facing_left:
-		throw_vect.x *= -1
-	attatched_to.holding_something = false
+	if attatched_to:
+		if attatched_to.facing_left:
+			throw_vect.x *= -1
+		attatched_to.holding_something = false
+	
 	attatched_to = null	
 	
 	apply_central_impulse(throw_vect)
@@ -121,6 +123,11 @@ func respawn():
 	#position = _spaw_position
 	if is_instance_valid(attatched_to):
 		attatched_to.holding_something = false
+	
+	if _charging_throw:
+		_throw_charge = 0
+		_charging_throw = false
+		globals.stop_sound_looping("charging_throw_key")
 	attatched_to = null
 	PhysicsServer2D.body_set_state(self, PhysicsServer2D.BODY_STATE_TRANSFORM, _spaw_position)
 	

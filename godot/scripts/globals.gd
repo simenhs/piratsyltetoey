@@ -4,20 +4,24 @@ var RNG = RandomNumberGenerator.new()
 var WORLD_ROOT = null
 var DEFAULT_MUSIC_VOLUME := 1.0
 
-var TRANSITION_TO_GAMEPLAY_SCENE_PATH := "res://scenes/start_play_transition/start_play_transition.tscn"
-var ROUND_OVER_SCENE_PATH := "res://scenes/round_over_transition/round_over_transition.tscn"
-var LEVEL_1_PATH := "res://scenes/level1/level2.tscn"
+const TRANSITION_TO_GAMEPLAY_SCENE_PATH := "res://scenes/start_play_transition/start_play_transition.tscn"
+const ROUND_OVER_SCENE_PATH := "res://scenes/round_over_transition/round_over_transition.tscn"
+const LEVEL_1_PATH := "res://scenes/level1/level2.tscn"
 
 var loader = null
 var current_scene: String
 var game_won: bool = false
 
+signal transition_to_level_started
 signal transition_to_level_complete
 
 func _ready():
 	set_process(false)
 	RNG.seed = hash("tosiso")
 	WORLD_ROOT = get_tree().root.get_node("persistent_world")
+	preload(TRANSITION_TO_GAMEPLAY_SCENE_PATH)
+	preload(ROUND_OVER_SCENE_PATH)
+	preload(LEVEL_1_PATH)
 
 func _process(delta: float) -> void:
 	var res = ResourceLoader.load_threaded_get_status(current_scene)
@@ -35,6 +39,7 @@ func return_to_main_menu() -> void:
 	WORLD_ROOT.return_to_menu()
 
 func transition_to_scene(new_scene_path: String) -> void:
+	transition_to_level_started.emit()
 	for level_scene in WORLD_ROOT.get_node("current_level_root").get_children():
 		WORLD_ROOT.get_node("current_level_root").remove_child(level_scene)
 		level_scene.queue_free()

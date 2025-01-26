@@ -124,7 +124,7 @@ one_shot = true
 
 [node name="HandPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, -7)
+position = Vector2(0, -30)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

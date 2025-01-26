@@ -57,10 +57,12 @@ func _input(event: InputEvent) -> void:
 		if attatched_to == null:
 			for player in picup_area_2d.get_overlapping_bodies():
 				if player is Player:
-					attatched_to = player
-					globals.play_sound("pickup")
-					picked_up.emit()
-					#sleeping = false
+					if not player.holding_something: 
+						attatched_to = player
+						globals.play_sound("pickup")
+						picked_up.emit()
+						attatched_to.holding_something = true
+						#sleeping = false
 		else: 
 			_charging_throw = true
 			globals.play_sound_looping("wall_slide", "charging_throw_key")
@@ -73,7 +75,9 @@ func _throw(charge : float):
 	var throw_vect = Vector2(1,-1) * charge*_throw_power #+ Vector2(0,-1000)
 	if attatched_to.facing_left:
 		throw_vect.x *= -1
+	attatched_to.holding_something = false
 	attatched_to = null	
+	
 	apply_central_impulse(throw_vect)
 	
 
@@ -115,6 +119,8 @@ func respawn():
 	#freeze_mode = FreezeMode.FREEZE_MODE_KINEMATIC
 	#freeze = true
 	#position = _spaw_position
+	if is_instance_valid(attatched_to):
+		attatched_to.holding_something = false
 	attatched_to = null
 	PhysicsServer2D.body_set_state(self, PhysicsServer2D.BODY_STATE_TRANSFORM, _spaw_position)
 	

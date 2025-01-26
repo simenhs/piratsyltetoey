@@ -19,6 +19,7 @@ var spawn_position : Vector2
 var _wall_sliding := false : set = set_wall_sliding
 var walkning := false : set = set_walking
 var jumping := false : set = set_jumping
+var holding_something := false
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -143,6 +144,7 @@ func get_global_hand_transform():
 	
 func respawn():
 	#todo: Play death sound 
+	globals.play_sound("throw")
 	position = spawn_position
 	drop_items.emit()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://y5w8ytid2tgy"]
+[gd_scene load_steps=46 format=3 uid="uid://y5w8ytid2tgy"]
 
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_lpcwg"]
 [ext_resource type="PackedScene" uid="uid://cb02wyobajoxx" path="res://scenes/level1/world/world2.tscn" id="2_huxru"]
@@ -47,8 +47,11 @@ size = Vector2(11, 81)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrooy"]
 size = Vector2(14, 88)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfeeb"]
+size = Vector2(109.5, 107)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crvsm"]
-size = Vector2(232, 60)
+size = Vector2(232, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkdug"]
 size = Vector2(98, 106)
@@ -129,6 +132,8 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_nvgy3"]
+
 [node name="Level2" type="Node"]
 process_mode = 3
 script = ExtResource("1_lpcwg")
@@ -136,7 +141,7 @@ script = ExtResource("1_lpcwg")
 [node name="World2" parent="." instance=ExtResource("2_huxru")]
 
 [node name="Player" parent="." instance=ExtResource("3_tqm2y")]
-position = Vector2(53, 808)
+position = Vector2(41, 808)
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
@@ -154,7 +159,7 @@ one_shot = true
 autostart = true
 
 [node name="HomePosition" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
-position = Vector2(639, 539)
+position = Vector2(653, 500)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
 _texture = ExtResource("5_bf8ti")
@@ -228,7 +233,7 @@ polygon = PackedVector2Array(215, 798, 282, 797, 283, 807, 215, 807)
 [node name="Spikes3" parent="." instance=ExtResource("12_gdyw0")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes3"]
-position = Vector2(500, -113)
+position = Vector2(501, -142)
 polygon = PackedVector2Array(215, 798, 240, 799, 238, 807, 215, 807)
 
 [node name="Spikes4" parent="." instance=ExtResource("12_gdyw0")]
@@ -305,7 +310,7 @@ hold_e_down_zone = NodePath("ThrowHelpArea")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/MoveHelpArea"]
-position = Vector2(56, 815)
+position = Vector2(39, 814)
 shape = SubResource("RectangleShape2D_xrooy")
 
 [node name="JumpHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
@@ -313,11 +318,11 @@ position = Vector2(66, -4)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
-position = Vector2(56, 851)
-shape = SubResource("RectangleShape2D_crvsm")
+position = Vector2(63.75, 871.5)
+shape = SubResource("RectangleShape2D_pfeeb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
-position = Vector2(1520, 698)
+position = Vector2(1516, 662)
 shape = SubResource("RectangleShape2D_crvsm")
 
 [node name="ThrowHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
@@ -335,5 +340,10 @@ position = Vector2(929, 544)
 scale = Vector2(0.373194, 0.373194)
 sprite_frames = SubResource("SpriteFrames_dc4vt")
 animation = &"Win"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_nvgy3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

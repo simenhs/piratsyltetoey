@@ -12,10 +12,6 @@ func _process(delta: float) -> void:
 	if is_playing:
 		if Input.is_action_just_pressed("open_game_menu"):
 			$menu_root/game_menu.show()
-		else:
-			print("NOT PRESSED")
-	else:
-		print("IS NOT PLAYING")
 
 func play_start() -> void:
 	is_playing = true

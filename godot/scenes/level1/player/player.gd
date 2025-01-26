@@ -74,6 +74,7 @@ func _jump(_delta : float):
 		
 func _bounce_jump(_delta : float):
 	globals.play_sound("jump_chain") #Todo: replace with bounce sound 
+	print(velocity.y)
 	velocity.y = JUMP_VELOCITY + JUMP_VELOCITY*0.1 *bounce_count
 	bounce_count += 1 
 	coyote_timer.stop()

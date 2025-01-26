@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dultuttg4nbk1"]
+
+[ext_resource type="Script" path="res://scenes/start_play_transition/start_play_transition.gd" id="1_n7xce"]
+
+[node name="start_play_transition" type="Container"]
+script = ExtResource("1_n7xce")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dduxbeghnulqw"]
+
+[ext_resource type="Script" path="res://components/game_menu.gd" id="1_yac1d"]
+
+[node name="GameMenu" type="Container"]
+z_index = 999
+script = ExtResource("1_yac1d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1980, 1080)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="quit_to_main_menu" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "QUIT TO MENU"
+
+[node name="quit_game" type="Button" parent="MarginContainer/VBoxContainer"]
+z_index = 100
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "EXIT GAME"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit_to_main_menu" to="." method="quit_to_main_menu"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit_game" to="." method="quit_game"]

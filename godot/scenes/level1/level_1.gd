@@ -37,7 +37,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	
 	if not _game_won:
 		game_lost.emit()
 		#loos_label.show()

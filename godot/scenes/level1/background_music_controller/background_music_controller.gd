@@ -5,14 +5,14 @@ extends Node
 @export var loose_objects : Array[LoosePice]
 @export var hold_e_down_zone :Area2D
 
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer
 var sync_player : AudioStreamSynchronized
 
 var playing_bg = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	audio_stream_player.volume_db = linear_to_db(globals.DEFAULT_MUSIC_VOLUME)
+	audio_stream_player = globals.WORLD_ROOT.get_node("music_player")
 	sync_player = audio_stream_player.stream
 	play_help_move()
 	move_zone.body_exited.connect(func (_b): play_bg())

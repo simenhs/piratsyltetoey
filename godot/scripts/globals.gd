@@ -3,6 +3,7 @@ extends Node
 var RNG = RandomNumberGenerator.new()
 var WORLD_ROOT = null
 var DEFAULT_MUSIC_VOLUME := 1.0
+var START_SCENE_PATH := "res://scenes/level1/level2.tscn"
 
 func _ready():
 	RNG.seed = hash("tosiso")

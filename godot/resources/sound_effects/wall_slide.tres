@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="SoundEffect" load_steps=5 format=3 uid="uid://b25ldaflpcuhi"]
 
 [ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="1_lqt1w"]
-[ext_resource type="AudioStream" uid="uid://da0ofwk4d7uhe" path="res://assets/audio/slide_0.mp3" id="2_ykxdk"]
-[ext_resource type="AudioStream" uid="uid://cv4n51hnvahem" path="res://assets/audio/slide_1.mp3" id="3_f34et"]
-[ext_resource type="AudioStream" uid="uid://ep6bgohxxypl" path="res://assets/audio/slide_2.mp3" id="4_p3v5b"]
+[ext_resource type="AudioStream" uid="uid://bhimdjb0ahxo4" path="res://assets/audio/slide_0.mp3" id="2_ykxdk"]
+[ext_resource type="AudioStream" uid="uid://bv36h3e4q33gr" path="res://assets/audio/slide_1.mp3" id="3_f34et"]
+[ext_resource type="AudioStream" uid="uid://c116xjwi3esm" path="res://assets/audio/slide_2.mp3" id="4_p3v5b"]
 
 [resource]
 script = ExtResource("1_lqt1w")

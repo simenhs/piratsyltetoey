@@ -15,11 +15,11 @@ func _ready() -> void:
 	audio_stream_player.volume_db = linear_to_db(globals.DEFAULT_MUSIC_VOLUME)
 	sync_player = audio_stream_player.stream
 	play_help_move()
-	move_zone.body_exited.connect(func (b): play_bg())
-	jump_zone.body_entered.connect(func (b): play_help_jump())
-	jump_zone.body_exited.connect(func (b): play_bg())
-	hold_e_down_zone.body_entered.connect(func (b): play_help_throw())
-	hold_e_down_zone.body_exited.connect(func (b): play_bg())
+	move_zone.body_exited.connect(func (_b): play_bg())
+	jump_zone.body_entered.connect(func (_b): play_help_jump())
+	jump_zone.body_exited.connect(func (_b): play_bg())
+	hold_e_down_zone.body_entered.connect(func (_b): play_help_throw())
+	hold_e_down_zone.body_exited.connect(func (_b): play_bg())
 	
 	for object in loose_objects: 
 		object.player_nearby_enter.connect(play_help_pick_up)

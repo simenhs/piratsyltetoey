@@ -57,7 +57,7 @@ default_color = Color(1, 0, 0, 1)
 
 [node name="Line2D19" type="Line2D" parent="."]
 position = Vector2(3, -3)
-points = PackedVector2Array(1895, 456, 1894, 587, 1750, 595, 1757, 737)
+points = PackedVector2Array(1895, 456, 1894, 587, 1654, 590, 1660, 739)
 default_color = Color(1, 0, 0, 1)
 
 [node name="Line2D9" type="Line2D" parent="."]

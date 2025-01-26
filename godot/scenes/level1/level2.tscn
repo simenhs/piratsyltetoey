@@ -145,10 +145,10 @@ position = Vector2(41, 808)
 
 [node name="TimerLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 966.0
-offset_top = 590.0
-offset_right = 1534.0
-offset_bottom = 658.0
+offset_left = 632.0
+offset_top = 349.0
+offset_right = 1200.0
+offset_bottom = 437.0
 theme_override_font_sizes/font_size = 64
 text = "20.0"
 horizontal_alignment = 1
@@ -171,7 +171,7 @@ _id = "C"
 _texture = ExtResource("5_bf8ti")
 
 [node name="HomePosition2" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
-position = Vector2(1814, 523)
+position = Vector2(1749, 512)
 loose_pice = NodePath("../LoosePice2")
 _id = "B"
 _texture = ExtResource("6_y8qhv")
@@ -246,14 +246,14 @@ polygon = PackedVector2Array(212, 798, 220, 798, 218, 927, 210, 926)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes5"]
 position = Vector2(1682, -344)
-polygon = PackedVector2Array(212, 798, 220, 798, 220, 933, 77, 942, 80, 1078, 74, 1077, 66, 932, 211, 923)
+polygon = PackedVector2Array(212, 798, 220, 798, 220, 933, -19, 937, -15, 1079, -25, 1080, -29, 928, 211, 923)
 
 [node name="button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
 position = Vector2(841, 739)
 door = NodePath("../Door2")
 
 [node name="button4" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
-position = Vector2(1581, 563)
+position = Vector2(1601, 562)
 door = NodePath("../Door4")
 
 [node name="button3" parent="." node_paths=PackedStringArray("door") instance=ExtResource("13_vkn5b")]
@@ -283,7 +283,7 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_tjo40")
 
 [node name="Door4" parent="." instance=ExtResource("14_2p3pv")]
-position = Vector2(1737, 496)
+position = Vector2(1696, 502)
 _texture = ExtResource("17_7h6gi")
 metadata/_edit_group_ = true
 
@@ -322,7 +322,7 @@ position = Vector2(63.75, 871.5)
 shape = SubResource("RectangleShape2D_pfeeb")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
-position = Vector2(1516, 662)
+position = Vector2(1470, 662)
 shape = SubResource("RectangleShape2D_crvsm")
 
 [node name="ThrowHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
@@ -330,7 +330,7 @@ position = Vector2(1533, -343)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/ThrowHelpArea"]
-position = Vector2(65, 856)
+position = Vector2(68, 852)
 shape = SubResource("RectangleShape2D_tkdug")
 
 [node name="TempEndScreen" type="AnimatedSprite2D" parent="."]

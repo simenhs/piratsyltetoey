@@ -320,6 +320,7 @@ shape = SubResource("RectangleShape2D_xrooy")
 
 [node name="JumpHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
 position = Vector2(66, -4)
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]

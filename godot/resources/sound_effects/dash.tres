@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://d038tiwvpcq6g"]
+
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="1_oohuf"]
+[ext_resource type="AudioStream" uid="uid://dk5kxvddddrsi" path="res://assets/audio/dash.mp3" id="2_yvdel"]
+
+[resource]
+script = ExtResource("1_oohuf")
+name = "dash"
+streams = Array[AudioStream]([ExtResource("2_yvdel")])

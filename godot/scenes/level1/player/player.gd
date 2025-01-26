@@ -133,7 +133,7 @@ func _dash():
 			velocity.x = DASH_SPEED
 		dash_on_cooldown = true
 		get_tree().create_timer(DASH_COOLDOWN_TIME).timeout.connect(_on_dash_cooldown_timeout)
-		globals.play_sound("jump") #todo: replace with dash sound 
+		globals.play_sound("dash")
 
 
 func _on_dash_cooldown_timeout():

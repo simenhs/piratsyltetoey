@@ -22,6 +22,7 @@ func _on_trigger_body_entered(_body: Node2D) -> void:
 	modulate = Color.GREEN
 	button_sprite.hide()
 	button_pressed_sprite.show()
+	globals.play_sound("button_down")
 	door.open()
 
 
@@ -32,4 +33,5 @@ func _on_trigger_body_exited(_body: Node2D) -> void:
 		modulate = Color.WHITE
 		button_sprite.show()
 		button_pressed_sprite.hide()
+		globals.play_sound("button_up")
 		door.close()

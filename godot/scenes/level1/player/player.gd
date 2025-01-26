@@ -73,8 +73,7 @@ func _jump(_delta : float):
 		
 		
 func _bounce_jump(_delta : float):
-	globals.play_sound("jump") #Todo: replace with bounce sound 
-	print(velocity.y)
+	globals.play_sound("jump_chain") #Todo: replace with bounce sound 
 	velocity.y = JUMP_VELOCITY + JUMP_VELOCITY*0.1 *bounce_count
 	bounce_count += 1 
 	coyote_timer.stop()
@@ -144,7 +143,7 @@ func get_global_hand_transform():
 	
 func respawn():
 	#todo: Play death sound 
-	globals.play_sound("throw")
+	globals.play_sound("death")
 	position = spawn_position
 	drop_items.emit()
 

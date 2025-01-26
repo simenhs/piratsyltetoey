@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://vuy67oyr2buv"]
+[gd_scene load_steps=29 format=3 uid="uid://vuy67oyr2buv"]
 
 [ext_resource type="Script" path="res://scenes/persistent_world/persistent_world.gd" id="1_d0fmm"]
 [ext_resource type="PackedScene" uid="uid://2rx5e74o2ywa" path="res://components/polyphonic_audio_player.tscn" id="1_jjo3n"]
@@ -13,10 +13,14 @@
 [ext_resource type="Resource" uid="uid://0spyh38in14r" path="res://resources/sound_effects/pickup.tres" id="10_c8odm"]
 [ext_resource type="Resource" uid="uid://b25ldaflpcuhi" path="res://resources/sound_effects/wall_slide.tres" id="11_gtj4d"]
 [ext_resource type="PackedScene" uid="uid://caoi3bickqfdd" path="res://components/menu.tscn" id="13_3njh2"]
+[ext_resource type="Resource" uid="uid://dkkd3x2la7bo5" path="res://resources/sound_effects/death.tres" id="13_7vmjv"]
 [ext_resource type="AudioStream" uid="uid://7yc38ut7y0iy" path="res://assets/audio/loop1/loop1_floor.wav" id="13_olp22"]
 [ext_resource type="AudioStream" uid="uid://3ik8brjku7bx" path="res://assets/audio/loop1/loop1_melody_simple.wav" id="14_v6oq5"]
+[ext_resource type="Resource" uid="uid://c2qtf44vs0ev3" path="res://resources/sound_effects/button_up.tres" id="14_y4c1l"]
+[ext_resource type="Resource" uid="uid://k3ya5m55rpp2" path="res://resources/sound_effects/button_down.tres" id="15_bvwlx"]
 [ext_resource type="AudioStream" uid="uid://d04yr3reynnxv" path="res://assets/audio/loop1/loop1_melody_1.wav" id="15_k4o6o"]
 [ext_resource type="AudioStream" uid="uid://cv0305w3ufbj5" path="res://assets/audio/loop1/loop1_melody_2.wav" id="16_d7g2u"]
+[ext_resource type="Resource" uid="uid://cr3cegkykhc0x" path="res://resources/sound_effects/jump_chain.tres" id="16_ek3xi"]
 [ext_resource type="AudioStream" uid="uid://cn2ke65qvo446" path="res://assets/audio/loop1/loop1_press_space.wav" id="17_rr8qq"]
 [ext_resource type="AudioStream" uid="uid://ddoxpbwgh0aaw" path="res://assets/audio/loop1/loop1_press_a_and_d.wav" id="18_ngda1"]
 [ext_resource type="AudioStream" uid="uid://ds0xjfctnmjk" path="res://assets/audio/loop1/loop1_pick_it_up.wav" id="19_n05ef"]
@@ -25,7 +29,7 @@
 
 [sub_resource type="Resource" id="Resource_wbh1l"]
 script = ExtResource("2_fnxn6")
-sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii"), ExtResource("10_c8odm"), ExtResource("11_gtj4d")])
+sound_effects = Array[ExtResource("3_kbgrk")]([ExtResource("4_b4hns"), ExtResource("5_gxwxp"), ExtResource("6_gjuca"), ExtResource("7_bdtlx"), ExtResource("8_8ujl0"), ExtResource("9_vcyii"), ExtResource("10_c8odm"), ExtResource("11_gtj4d"), ExtResource("13_7vmjv"), ExtResource("14_y4c1l"), ExtResource("15_bvwlx"), ExtResource("16_ek3xi")])
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_1jkd1"]
 stream_count = 8

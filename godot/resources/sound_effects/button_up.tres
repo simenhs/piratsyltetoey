@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://c2qtf44vs0ev3"]
+
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="1_k3cm1"]
+[ext_resource type="AudioStream" uid="uid://dnxbihpqkg5uk" path="res://assets/audio/wav/button_up.wav" id="2_ehiy1"]
+
+[resource]
+script = ExtResource("1_k3cm1")
+name = "button_up"
+streams = Array[AudioStream]([ExtResource("2_ehiy1")])

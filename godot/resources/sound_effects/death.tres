@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SoundEffect" load_steps=3 format=3 uid="uid://dkkd3x2la7bo5"]
+
+[ext_resource type="Script" path="res://scripts/custom_resource_bases/sound_effect.gd" id="1_0p35l"]
+[ext_resource type="AudioStream" uid="uid://bo4xxkhihf75p" path="res://assets/audio/wav/death.wav" id="2_10dvm"]
+
+[resource]
+script = ExtResource("1_0p35l")
+name = "death"
+streams = Array[AudioStream]([ExtResource("2_10dvm")])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://y5w8ytid2tgy"]
+[gd_scene load_steps=44 format=3 uid="uid://y5w8ytid2tgy"]
 
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_lpcwg"]
 [ext_resource type="PackedScene" uid="uid://cb02wyobajoxx" path="res://scenes/level1/world/world2.tscn" id="2_huxru"]
@@ -48,7 +48,10 @@ size = Vector2(11, 81)
 size = Vector2(14, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crvsm"]
-size = Vector2(96, 124)
+size = Vector2(232, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkdug"]
+size = Vector2(98, 106)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dc4vt"]
 animations = [{
@@ -292,10 +295,11 @@ metadata/_edit_group_ = true
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_tjo40")
 
-[node name="BackgroundMusic_controller" parent="." node_paths=PackedStringArray("move_zone", "jump_zone", "loose_objects") instance=ExtResource("21_yvqt8")]
+[node name="BackgroundMusic_controller" parent="." node_paths=PackedStringArray("move_zone", "jump_zone", "loose_objects", "hold_e_down_zone") instance=ExtResource("21_yvqt8")]
 move_zone = NodePath("MoveHelpArea")
 jump_zone = NodePath("JumpHelpArea")
 loose_objects = [NodePath("../LoosePice"), NodePath("../LoosePice2"), NodePath("../LoosePice3")]
+hold_e_down_zone = NodePath("ThrowHelpArea")
 
 [node name="MoveHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
 collision_mask = 2
@@ -311,6 +315,18 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
 position = Vector2(56, 851)
 shape = SubResource("RectangleShape2D_crvsm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BackgroundMusic_controller/JumpHelpArea"]
+position = Vector2(1520, 698)
+shape = SubResource("RectangleShape2D_crvsm")
+
+[node name="ThrowHelpArea" type="Area2D" parent="BackgroundMusic_controller"]
+position = Vector2(1533, -343)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackgroundMusic_controller/ThrowHelpArea"]
+position = Vector2(65, 856)
+shape = SubResource("RectangleShape2D_tkdug")
 
 [node name="TempEndScreen" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

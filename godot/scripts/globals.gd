@@ -2,7 +2,7 @@ extends Node
 
 var RNG = RandomNumberGenerator.new()
 var WORLD_ROOT = null
-var DEFAULT_MUSIC_VOLUME := 0.0
+var DEFAULT_MUSIC_VOLUME := 1.0
 
 func _ready():
 	RNG.seed = hash("tosiso")

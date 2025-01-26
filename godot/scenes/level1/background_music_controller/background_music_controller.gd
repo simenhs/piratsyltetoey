@@ -3,6 +3,7 @@ extends Node
 @export var move_zone : Area2D
 @export var jump_zone : Area2D
 @export var loose_objects : Array[LoosePice]
+@export var hold_e_down_zone :Area2D
 
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 var sync_player : AudioStreamSynchronized
@@ -17,11 +18,13 @@ func _ready() -> void:
 	move_zone.body_exited.connect(func (b): play_bg())
 	jump_zone.body_entered.connect(func (b): play_help_jump())
 	jump_zone.body_exited.connect(func (b): play_bg())
+	hold_e_down_zone.body_entered.connect(func (b): play_help_throw())
+	hold_e_down_zone.body_exited.connect(func (b): play_bg())
 	
 	for object in loose_objects: 
 		object.player_nearby_enter.connect(play_help_pick_up)
 		object.player_nearby_exit.connect( play_bg)
-		object.picked_up.connect(play_help_throw)
+		object.picked_up.connect(play_bg)
 		
 	#move_zone.area_entered.connect(play_help_move)
 

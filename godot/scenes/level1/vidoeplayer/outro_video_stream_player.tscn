@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmcy11u2xqjeb"]
+
+[ext_resource type="Script" path="res://scenes/level1/vidoeplayer/outro_video_stream_player.gd" id="2_yvy2h"]
+
+[node name="OutroVideoStreamPlayer" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_yvy2h")

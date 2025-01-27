@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://rla4e3uabdhu"]
+
+[ext_resource type="VideoStream" path="res://assets/video/intro1.ogv" id="1_posw0"]
+[ext_resource type="Script" path="res://scenes/level1/vidoeplayer/intro_video_stream_player.gd" id="2_m18eh"]
+
+[node name="IntorVideo" type="VideoStreamPlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_posw0")
+autoplay = true
+script = ExtResource("2_m18eh")

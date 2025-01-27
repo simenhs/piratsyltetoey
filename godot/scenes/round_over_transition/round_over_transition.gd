@@ -6,11 +6,13 @@ extends Node
 func _ready() -> void:
 	$Container/panel_win.hide()
 	$Container/panel_loose.hide()
-	%TempEndScreen.show()
-	if globals.game_won:
-		game_won()
-	else:
-		game_lost()
+	#%TempEndScreen.show()
+	#if globals.game_won:
+		#game_won()
+	#else:
+		#game_lost()
+		
+	animation_finished()
 
 func _process(delta: float) -> void:
 	pass
@@ -20,12 +22,14 @@ func do_transition() -> void:
 	pass
 
 func game_won() -> void:
-	temp_end_screen.show()
-	temp_end_screen.play("Win")
+	#temp_end_screen.show()
+	#temp_end_screen.play("Win")
+	pass
 
 func game_lost() -> void:
-	temp_end_screen.show()
-	temp_end_screen.play("Lose")
+	#temp_end_screen.show()
+	#temp_end_screen.play("Lose")
+	pass
 
 func animation_finished() -> void:
 	%TempEndScreen.hide()

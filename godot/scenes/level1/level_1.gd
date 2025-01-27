@@ -9,15 +9,17 @@ var _game_won = false
 @onready var timer_label: Label = %TimerLabel
 @onready var timer: Timer = $Timer
 @onready var player: Player = %Player
-@onready var video_stream_player: VideoStreamPlayer = %VideoStreamPlayer
+@onready var intro_video_stream_player: VideoStreamPlayer = %IntroVideoStreamPlayer
+@onready var win_outro_video_stream_player: VideoStreamPlayer = %WinOutroVideoStreamPlayer
+@onready var lost_outro_video_stream_player: VideoStreamPlayer = %LostOutroVideoStreamPlayer
 
 #@onready var win_label: Label = %WinLabel
 #@onready var loos_label: Label = %LoosLabel
 
 func _ready() -> void:
-	video_stream_player.done.connect(on_intro_video_done)
-	
-
+	intro_video_stream_player.done.connect(on_intro_video_done)
+	win_outro_video_stream_player.done.connect(on_outro_video_done)
+	lost_outro_video_stream_player.done.connect(on_outro_video_done)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("quit"):
@@ -33,15 +35,22 @@ func _process(_delta: float) -> void:
 			if not h.objective_compleated():
 				all_objects_fixed = false
 	
-	if all_objects_fixed:
+	if all_objects_fixed or Input.is_action_just_pressed("cheat_win"):
 		globals.game_won = true
-		globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
-
+		#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
+		win_outro_video_stream_player.start()
+		
+	if Input.is_action_just_pressed("cheat_lose"):
+		_on_timer_timeout()
+	
 
 func _on_timer_timeout() -> void:
 	globals.game_won = false
-	globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
-
+	#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
+	lost_outro_video_stream_player.start()
 func on_intro_video_done():
 	timer.start()
 	player.start_playing()
+
+func on_outro_video_done():
+	globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)

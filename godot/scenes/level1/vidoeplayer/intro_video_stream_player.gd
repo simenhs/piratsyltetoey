@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	if _has_finished:
 		return
 	print(stream_position)
-	if stream_position > 8.0: 
+	if stream_position >= 7.9: 
 		paused = true
 		var t = create_tween()
 		t.tween_property(self,"modulate:a",0,0.5)

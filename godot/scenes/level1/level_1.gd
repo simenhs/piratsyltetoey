@@ -22,7 +22,8 @@ func _ready() -> void:
 	intro_video_stream_player.done.connect(on_intro_video_done)
 	win_outro_video_stream_player.done.connect(on_outro_video_done)
 	lost_outro_video_stream_player.done.connect(on_outro_video_done)
-
+	#background_music_controller.play_intro()
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action("quit"):
 		get_tree().quit()

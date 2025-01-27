@@ -73,7 +73,10 @@ func play_help_throw():
 	playing_bg = false
 
 func play_intro():
-	play_bg()
+	#play_bg()
+	audio_stream_player.play(0)
+	mute_steams()
+	sync_player.set_sync_stream_volume(8,0)
 	
 func play_outro_lose():
 	play_bg()

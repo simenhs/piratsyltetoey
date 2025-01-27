@@ -50,7 +50,11 @@ func _process(_delta: float) -> void:
 		
 	if Input.is_action_just_pressed("cheat_lose"):
 		_on_timer_timeout()
-	
+
+	if timer.time_left < 15:
+		timer_label.modulate = Color.RED	
+	else : 
+		timer_label.modulate = Color.WHITE
 
 func _on_timer_timeout() -> void:
 	globals.game_won = false

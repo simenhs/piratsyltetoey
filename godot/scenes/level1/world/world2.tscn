@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb02wyobajoxx"]
+[gd_scene load_steps=15 format=3 uid="uid://cb02wyobajoxx"]
 
 [ext_resource type="Texture2D" uid="uid://csdmei2bsyhye" path="res://assets/images/blueprint_4.png" id="1_fy0gp"]
 [ext_resource type="Texture2D" uid="uid://djx1ety0o3c0v" path="res://assets/images/platforms/horizontal_platform.png" id="2_hd1ei"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dboumw3qhcgvl" path="res://assets/images/platforms/spikes.png" id="10_vx0d8"]
 [ext_resource type="Texture2D" uid="uid://cf8jw5sggjvg1" path="res://assets/images/platforms/corner_top_left.png" id="12_eh5ah"]
 [ext_resource type="Texture2D" uid="uid://doukwq2yqv7yr" path="res://assets/images/platforms/spikes_long.png" id="13_4xknn"]
+[ext_resource type="Texture2D" uid="uid://diacsrntttofc" path="res://assets/images/controls_and_jumps.png" id="14_emlmv"]
 
 [node name="World2" type="StaticBody2D"]
 collision_mask = 5
@@ -416,3 +417,7 @@ texture = ExtResource("12_eh5ah")
 [node name="PlatformEndRight" type="Sprite2D" parent="."]
 position = Vector2(467, 848)
 texture = ExtResource("4_fbp0q")
+
+[node name="ControlsAndJumps" type="Sprite2D" parent="."]
+position = Vector2(1006, 399)
+texture = ExtResource("14_emlmv")

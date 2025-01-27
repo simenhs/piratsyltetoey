@@ -1,14 +1,16 @@
-[gd_scene load_steps=27 format=3 uid="uid://bdsk5sn34y4uq"]
+[gd_scene load_steps=29 format=3 uid="uid://bdsk5sn34y4uq"]
 
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_lpcwg"]
 [ext_resource type="PackedScene" uid="uid://cb02wyobajoxx" path="res://scenes/level1/world/world2.tscn" id="2_huxru"]
 [ext_resource type="PackedScene" uid="uid://qboe47l73lll" path="res://scenes/level1/player/player.tscn" id="3_tqm2y"]
 [ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="4_33i86"]
 [ext_resource type="Texture2D" uid="uid://biko0m1vbdbjg" path="res://assets/images/objects/placeholder_gunpowder.png" id="5_bf8ti"]
+[ext_resource type="Texture2D" uid="uid://dbll3g7gf3xvc" path="res://assets/images/platforms/hammer_placeholder.png" id="5_x3f8p"]
 [ext_resource type="Texture2D" uid="uid://crca8vg6yu2b5" path="res://assets/images/objects/placeholder_flint.png" id="6_y8qhv"]
 [ext_resource type="Texture2D" uid="uid://dyt1dghhti3dr" path="res://assets/images/objects/placeholder_bullet.png" id="7_hgusn"]
 [ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="8_1ctgv"]
 [ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="9_t7u2k"]
+[ext_resource type="Texture2D" uid="uid://ycipmdc8l4f" path="res://assets/images/platforms/hammer.png" id="10_b4c50"]
 [ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="10_fwvv3"]
 [ext_resource type="Texture2D" uid="uid://cv43v436joiqw" path="res://assets/images/objects/bullet.png" id="11_5d63q"]
 [ext_resource type="PackedScene" uid="uid://cns7qe6d4pkwi" path="res://scenes/level1/spikes/spikes.tscn" id="12_gdyw0"]
@@ -67,7 +69,7 @@ one_shot = true
 position = Vector2(653, 500)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
-_texture = ExtResource("5_bf8ti")
+_texture = ExtResource("5_x3f8p")
 
 [node name="HomePosition4" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
 position = Vector2(1175, 544)
@@ -88,13 +90,13 @@ _id = "A"
 _texture = ExtResource("7_hgusn")
 
 [node name="LoosePice" parent="." instance=ExtResource("8_1ctgv")]
-position = Vector2(79, 631)
+position = Vector2(79, 632)
 _id = "C"
-_texture = ExtResource("9_t7u2k")
+_texture = ExtResource("10_b4c50")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
-polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
+polygon = PackedVector2Array(26, 22, 27, 6, 23, -14, 15, -21, 7, -22, 10, -4, -27, -4, -28, 14, 8, 9, 7, 21)
 
 [node name="LoosePice4" parent="." instance=ExtResource("8_1ctgv")]
 position = Vector2(939, 710)
@@ -133,13 +135,13 @@ polygon = PackedVector2Array(215, 798, 252, 798, 252, 806, 215, 807)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes2"]
 position = Vector2(49, -122)
-polygon = PackedVector2Array(215, 798, 282, 797, 283, 807, 215, 807)
+polygon = PackedVector2Array(219, 797, 255, 798, 256, 806, 221, 805)
 
 [node name="Spikes3" parent="." instance=ExtResource("12_gdyw0")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes3"]
-position = Vector2(501, -142)
-polygon = PackedVector2Array(215, 798, 240, 799, 238, 807, 215, 807)
+position = Vector2(493, -144)
+polygon = PackedVector2Array(215, 798, 245, 799, 245, 805, 216, 806)
 
 [node name="Spikes4" parent="." instance=ExtResource("12_gdyw0")]
 
@@ -206,6 +208,7 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_tjo40")
 
 [node name="BackgroundMusic_controller" parent="." node_paths=PackedStringArray("move_zone", "jump_zone", "loose_objects", "hold_e_down_zone") instance=ExtResource("21_yvqt8")]
+unique_name_in_owner = true
 move_zone = NodePath("MoveHelpArea")
 jump_zone = NodePath("JumpHelpArea")
 loose_objects = [NodePath("../LoosePice"), NodePath("../LoosePice2"), NodePath("../LoosePice3")]
@@ -240,6 +243,7 @@ shape = SubResource("RectangleShape2D_tkdug")
 
 [node name="IntroVideoStreamPlayer" parent="." instance=ExtResource("38_yld74")]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -250,6 +254,7 @@ grow_vertical = 2
 
 [node name="WinOutroVideoStreamPlayer" parent="." instance=ExtResource("39_0xht3")]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -261,6 +266,7 @@ stream = ExtResource("40_xtk80")
 
 [node name="LostOutroVideoStreamPlayer" parent="." instance=ExtResource("39_0xht3")]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

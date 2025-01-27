@@ -1,111 +1,418 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb02wyobajoxx"]
+[gd_scene load_steps=14 format=3 uid="uid://cb02wyobajoxx"]
 
-[ext_resource type="Texture2D" uid="uid://8prj8ivq5acv" path="res://assets/images/blueprint_3.png" id="1_ud646"]
+[ext_resource type="Texture2D" uid="uid://csdmei2bsyhye" path="res://assets/images/blueprint_4.png" id="1_fy0gp"]
+[ext_resource type="Texture2D" uid="uid://djx1ety0o3c0v" path="res://assets/images/platforms/horizontal_platform.png" id="2_hd1ei"]
+[ext_resource type="Texture2D" uid="uid://bligitf2mshrb" path="res://assets/images/platforms/platform_end_left.png" id="3_8mair"]
+[ext_resource type="Texture2D" uid="uid://c0bnosw3bp0l4" path="res://assets/images/platforms/platform_end_right.png" id="4_fbp0q"]
+[ext_resource type="Texture2D" uid="uid://2kbv6vtw18w6" path="res://assets/images/platforms/corner_top_right.png" id="5_fp4g1"]
+[ext_resource type="Texture2D" uid="uid://bljwvoi2snafw" path="res://assets/images/platforms/vertical_platform.png" id="6_a8d15"]
+[ext_resource type="Texture2D" uid="uid://bqoxnkuxmvk3" path="res://assets/images/platforms/corner_bottom_left.png" id="7_ef23i"]
+[ext_resource type="Texture2D" uid="uid://dank8ui8ainau" path="res://assets/images/platforms/platform_end_top.png" id="8_6adts"]
+[ext_resource type="Texture2D" uid="uid://d062yysfspcxw" path="res://assets/images/platforms/platform_end_bottom.png" id="9_okgc3"]
+[ext_resource type="Texture2D" uid="uid://cy1lgpvlmxmor" path="res://assets/images/platforms/corner_bottom_right.png" id="10_40lvc"]
+[ext_resource type="Texture2D" uid="uid://dboumw3qhcgvl" path="res://assets/images/platforms/spikes.png" id="10_vx0d8"]
+[ext_resource type="Texture2D" uid="uid://cf8jw5sggjvg1" path="res://assets/images/platforms/corner_top_left.png" id="12_eh5ah"]
+[ext_resource type="Texture2D" uid="uid://doukwq2yqv7yr" path="res://assets/images/platforms/spikes_long.png" id="13_4xknn"]
 
 [node name="World2" type="StaticBody2D"]
 collision_mask = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ud646")
+texture = ExtResource("1_fy0gp")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-16, 87)
+position = Vector2(-16.8, 86.7)
 polygon = PackedVector2Array(31, 424, 24, 828, 113.877, 830.853, 150, 832, 367, 793, 512, 753, 561, 689, 595, 677, 624, 669, 680, 671, 801, 652, 1265, 650, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 478, 362, 491, 379, 478, 403, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
-
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(13, 842, 101, 842, 101, 915)
-
-[node name="Line2D2" type="Line2D" parent="."]
-points = PackedVector2Array(177, 905, 178, 840, 234, 847, 492, 833)
-
-[node name="Line2D3" type="Line2D" parent="."]
-position = Vector2(-80, -25)
-points = PackedVector2Array(272, 694, 343, 694)
-
-[node name="Line2D5" type="Line2D" parent="."]
-position = Vector2(94, -4)
-points = PackedVector2Array(413, 681, 414, 825)
-
-[node name="Line2D11" type="Line2D" parent="."]
-position = Vector2(114, -106)
-points = PackedVector2Array(227, 778, 285, 788, 285, 866, 330, 877)
-
-[node name="Line2D4" type="Line2D" parent="."]
-points = PackedVector2Array(20, 670, 153, 671)
-
-[node name="Line2D6" type="Line2D" parent="."]
-position = Vector2(-1, -1)
-points = PackedVector2Array(628, 712, 629, 557, 685, 558)
-
-[node name="Line2D7" type="Line2D" parent="."]
-position = Vector2(107, 0)
-points = PackedVector2Array(462, 434, 462.091, 446.646, 463, 710)
-
-[node name="Line2D8" type="Line2D" parent="."]
-points = PackedVector2Array(332, 679, 262, 680)
-default_color = Color(1, 0, 0, 1)
-
-[node name="Line2D10" type="Line2D" parent="."]
-points = PackedVector2Array(716, 661, 739, 660)
-default_color = Color(1, 0, 0, 1)
-
-[node name="Line2D17" type="Line2D" parent="."]
-points = PackedVector2Array(1310, 458, 1309, 587)
-default_color = Color(1, 0, 0, 1)
-
-[node name="Line2D19" type="Line2D" parent="."]
-position = Vector2(3, -3)
-points = PackedVector2Array(1895, 456, 1894, 587, 1654, 590, 1660, 739)
-default_color = Color(1, 0, 0, 1)
-
-[node name="Line2D9" type="Line2D" parent="."]
-points = PackedVector2Array(191, 678, 152, 678)
-default_color = Color(1, 0, 0, 1)
-
-[node name="Line2D12" type="Line2D" parent="."]
-points = PackedVector2Array(743, 453, 743, 665)
-
-[node name="Line2D13" type="Line2D" parent="."]
-points = PackedVector2Array(898, 446, 900, 530, 821, 530)
-
-[node name="Line2D14" type="Line2D" parent="."]
-points = PackedVector2Array(1075, 451, 1075, 518)
-
-[node name="Line2D16" type="Line2D" parent="."]
-position = Vector2(86, 34)
-points = PackedVector2Array(1458, 532, 1566, 532)
-
-[node name="Line2D15" type="Line2D" parent="."]
-points = PackedVector2Array(1301, 452, 1301, 586, 1072, 587, 1071, 675)
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
-position = Vector2(1, 1)
-polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 180, 839, 231, 841, 505, 832, 596, 761, 604, 756, 580, 861, 16, 949, -17, 834)
+position = Vector2(-23, 3)
+polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 180, 839, 231, 841, 505, 832, 580, 861, 16, 949, -17, 834)
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(9, 673, 150, 675, 151, 662, 4, 659)
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
-position = Vector2(1, -2)
-polygon = PackedVector2Array(190, 662, 191, 677, 259, 676, 261, 665)
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="."]
+position = Vector2(-23, 3)
+polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 180, 839, 231, 841, 505, 832, 580, 861, 16, 949, -17, 834)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 2)
 polygon = PackedVector2Array(1545, 561, 1546, 573, 1649, 571, 1648, 561)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(737, 449, 738, 662, 750, 663, 749, 456, 890, 455, 895, 524, 820, 526, 822, 538, 904, 538, 904, 455, 1067, 453, 1068, 519, 1080, 518, 1080, 456, 1294, 452, 1294, 580, 1067, 581, 1066, 674, 1073, 676, 1079, 591, 1306, 591, 1309, 446)
+position = Vector2(1, -1)
+polygon = PackedVector2Array(737, 449, 738, 662, 703, 662, 702, 674, 750, 674, 749, 456, 890, 455, 889, 526, 820, 526, 822, 538, 904, 538, 904, 455, 1067, 453, 1068, 519, 1080, 518, 1080, 456, 1294, 452, 1294, 580, 1067, 581, 1066, 674, 1073, 676, 1079, 591, 1306, 591, 1309, 446)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, -5)
 polygon = PackedVector2Array(565, 436, 563, 710, 575, 712, 575, 435)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 3)
 polygon = PackedVector2Array(686, 550, 622, 548, 622, 713, 634, 713, 632, 564, 686, 565)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(502, 675, 505, 824, 512, 820, 513, 679)
+position = Vector2(-44.8, -23.3)
+polygon = PackedVector2Array(543.8, 699.3, 543.8, 850.3, 556.8, 848.3, 555.8, 699.3)
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
-position = Vector2(-1, -3)
-polygon = PackedVector2Array(340, 668, 343, 679, 396, 695, 396, 767, 440, 779, 445, 768, 406, 756, 405, 680)
+position = Vector2(-44.8, -23.3)
+polygon = PackedVector2Array(49.8, 688.3, 49.8, 703.3, 189.8, 702.3, 188.8, 712.3, 248.8, 713.3, 248.845, 698.067, 303.8, 701.3, 307.8, 712.3, 362.8, 714.3, 364.733, 698.893, 426.8, 701.3, 428.8, 793.3, 492.8, 793.3, 488.8, 778.3, 440.8, 781.3, 440.8, 686.3)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="HorizontalPlatform" type="Sprite2D" parent="Node"]
+position = Vector2(82.625, 669)
+scale = Vector2(0.52234, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform2" type="Sprite2D" parent="Node"]
+position = Vector2(350, 669)
+scale = Vector2(0.274202, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform7" type="Sprite2D" parent="Node"]
+position = Vector2(659.391, 559)
+scale = Vector2(0.217952, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform8" type="Sprite2D" parent="Node"]
+position = Vector2(722.305, 667)
+scale = Vector2(0.130253, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform9" type="Sprite2D" parent="Node"]
+position = Vector2(857.152, 531)
+scale = Vector2(0.290658, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform10" type="Sprite2D" parent="Node"]
+position = Vector2(1186.58, 584)
+scale = Vector2(0.924053, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform12" type="Sprite2D" parent="Node"]
+position = Vector2(1790.79, 598)
+scale = Vector2(0.951388, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform11" type="Sprite2D" parent="Node"]
+position = Vector2(1598, 568)
+scale = Vector2(0.459574, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform4" type="Sprite2D" parent="Node"]
+position = Vector2(418, 763)
+scale = Vector2(0.195745, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndLeft2" type="Sprite2D" parent="Node"]
+position = Vector2(19, 669)
+texture = ExtResource("3_8mair")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform3" type="Sprite2D" parent="Node"]
+position = Vector2(231, 669)
+scale = Vector2(0.235638, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform5" type="Sprite2D" parent="Node"]
+position = Vector2(174, 683)
+scale = Vector2(0.140426, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndRight3" type="Sprite2D" parent="Node"]
+position = Vector2(444, 763)
+texture = ExtResource("4_fbp0q")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndRight4" type="Sprite2D" parent="Node"]
+position = Vector2(687, 559)
+texture = ExtResource("4_fbp0q")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopRight" type="Sprite2D" parent="Node"]
+position = Vector2(389, 669)
+texture = ExtResource("5_fp4g1")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopRight2" type="Sprite2D" parent="Node"]
+position = Vector2(151, 669)
+texture = ExtResource("5_fp4g1")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform" type="Sprite2D" parent="Node"]
+position = Vector2(389, 716.125)
+scale = Vector2(1, 0.924157)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform2" type="Sprite2D" parent="Node"]
+position = Vector2(505, 752.5)
+scale = Vector2(1, 1.60674)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform4" type="Sprite2D" parent="Node"]
+position = Vector2(628, 637)
+scale = Vector2(1, 1.60674)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform3" type="Sprite2D" parent="Node"]
+position = Vector2(569, 587.5)
+scale = Vector2(1, 2.61798)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform5" type="Sprite2D" parent="Node"]
+position = Vector2(744, 555.25)
+scale = Vector2(1, 2.35393)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform6" type="Sprite2D" parent="Node"]
+position = Vector2(898, 486.125)
+scale = Vector2(1, 0.851123)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform7" type="Sprite2D" parent="Node"]
+position = Vector2(1075, 484.563)
+scale = Vector2(1, 0.751405)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform9" type="Sprite2D" parent="Node"]
+position = Vector2(1072, 631.281)
+scale = Vector2(1, 0.915028)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform8" type="Sprite2D" parent="Node"]
+position = Vector2(1301, 514.781)
+scale = Vector2(1, 1.42065)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform10" type="Sprite2D" parent="Node"]
+position = Vector2(1672, 669.891)
+scale = Vector2(1, 1.4856)
+texture = ExtResource("6_a8d15")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomLeft" type="Sprite2D" parent="Node"]
+position = Vector2(389, 763)
+texture = ExtResource("7_ef23i")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomLeft2" type="Sprite2D" parent="Node"]
+position = Vector2(151, 683)
+texture = ExtResource("7_ef23i")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndTop" type="Sprite2D" parent="Node"]
+position = Vector2(505, 678)
+texture = ExtResource("8_6adts")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndBottom" type="Sprite2D" parent="Node"]
+position = Vector2(569, 706)
+texture = ExtResource("9_okgc3")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndBottom2" type="Sprite2D" parent="Node"]
+position = Vector2(628, 711)
+texture = ExtResource("9_okgc3")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndTop2" type="Sprite2D" parent="Node"]
+position = Vector2(569, 468)
+texture = ExtResource("8_6adts")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomRight" type="Sprite2D" parent="Node"]
+position = Vector2(197, 683)
+texture = ExtResource("10_40lvc")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform6" type="Sprite2D" parent="Node"]
+position = Vector2(288, 683)
+scale = Vector2(0.140426, 1)
+texture = ExtResource("2_hd1ei")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopRight3" type="Sprite2D" parent="Node"]
+position = Vector2(265, 669)
+texture = ExtResource("5_fp4g1")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomLeft3" type="Sprite2D" parent="Node"]
+position = Vector2(265, 683)
+texture = ExtResource("7_ef23i")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomRight2" type="Sprite2D" parent="Node"]
+position = Vector2(311, 683)
+texture = ExtResource("10_40lvc")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopLeft" type="Sprite2D" parent="Node"]
+position = Vector2(628, 559)
+texture = ExtResource("12_eh5ah")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndLeft" type="Sprite2D" parent="Node"]
+position = Vector2(704, 667)
+texture = ExtResource("3_8mair")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndLeft3" type="Sprite2D" parent="Node"]
+position = Vector2(820, 531)
+texture = ExtResource("3_8mair")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomRight3" type="Sprite2D" parent="Node"]
+position = Vector2(898, 531)
+texture = ExtResource("10_40lvc")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndBottom3" type="Sprite2D" parent="Node"]
+position = Vector2(1075, 520)
+texture = ExtResource("9_okgc3")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndBottom4" type="Sprite2D" parent="Node"]
+position = Vector2(1072, 674)
+texture = ExtResource("9_okgc3")
+metadata/_edit_lock_ = true
+
+[node name="CornerBottomRight4" type="Sprite2D" parent="Node"]
+position = Vector2(1301, 584)
+texture = ExtResource("10_40lvc")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopLeft2" type="Sprite2D" parent="Node"]
+position = Vector2(1072, 584)
+texture = ExtResource("12_eh5ah")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndLeft4" type="Sprite2D" parent="Node"]
+position = Vector2(1541, 568)
+texture = ExtResource("3_8mair")
+metadata/_edit_lock_ = true
+
+[node name="PlatformEndRight" type="Sprite2D" parent="Node"]
+position = Vector2(1655, 568)
+texture = ExtResource("4_fbp0q")
+metadata/_edit_lock_ = true
+
+[node name="CornerTopLeft3" type="Sprite2D" parent="Node"]
+position = Vector2(1672, 598)
+texture = ExtResource("12_eh5ah")
+metadata/_edit_lock_ = true
+
+[node name="Spikes" type="Sprite2D" parent="."]
+position = Vector2(174, 669)
+texture = ExtResource("10_vx0d8")
+
+[node name="Spikes2" type="Sprite2D" parent="."]
+position = Vector2(288, 669)
+texture = ExtResource("10_vx0d8")
+
+[node name="CornerTopLeft" type="Sprite2D" parent="."]
+position = Vector2(197, 669)
+texture = ExtResource("12_eh5ah")
+
+[node name="CornerTopLeft2" type="Sprite2D" parent="."]
+position = Vector2(311, 669)
+texture = ExtResource("12_eh5ah")
+
+[node name="Spikes3" type="Sprite2D" parent="."]
+position = Vector2(721, 652)
+texture = ExtResource("10_vx0d8")
+
+[node name="CornerBottomRight" type="Sprite2D" parent="."]
+position = Vector2(744, 667)
+texture = ExtResource("10_40lvc")
+
+[node name="SpikesLong" type="Sprite2D" parent="."]
+position = Vector2(1829, 582)
+texture = ExtResource("13_4xknn")
+
+[node name="SpikesLong2" type="Sprite2D" parent="."]
+position = Vector2(1725, 583)
+texture = ExtResource("13_4xknn")
+
+[node name="SpikesLong3" type="Sprite2D" parent="."]
+position = Vector2(1315, 519)
+rotation = 1.5708
+texture = ExtResource("13_4xknn")
+
+[node name="SpikesLong4" type="Sprite2D" parent="."]
+position = Vector2(1657, 666)
+rotation = -1.5708
+texture = ExtResource("13_4xknn")
+
+[node name="Spikes4" type="Sprite2D" parent="."]
+position = Vector2(1895, 556)
+rotation = -1.5708
+texture = ExtResource("10_vx0d8")
+
+[node name="Spikes5" type="Sprite2D" parent="."]
+position = Vector2(1895, 523)
+rotation = -1.5708
+texture = ExtResource("10_vx0d8")
+
+[node name="Spikes6" type="Sprite2D" parent="."]
+position = Vector2(1896, 490)
+rotation = -1.5708
+texture = ExtResource("10_vx0d8")
+
+[node name="HorizontalPlatform" type="Sprite2D" parent="."]
+position = Vector2(41.25, 846)
+scale = Vector2(0.244681, 1)
+texture = ExtResource("2_hd1ei")
+
+[node name="HorizontalPlatform2" type="Sprite2D" parent="."]
+position = Vector2(41.25, 846)
+scale = Vector2(0.244681, 1)
+texture = ExtResource("2_hd1ei")
+
+[node name="HorizontalPlatform3" type="Sprite2D" parent="."]
+position = Vector2(313.625, 848)
+scale = Vector2(1.27979, 1)
+texture = ExtResource("2_hd1ei")
+
+[node name="CornerTopRight" type="Sprite2D" parent="."]
+position = Vector2(76, 846)
+texture = ExtResource("5_fp4g1")
+
+[node name="VerticalPlatform" type="Sprite2D" parent="."]
+position = Vector2(76, 883.25)
+scale = Vector2(1, 0.713483)
+texture = ExtResource("6_a8d15")
+
+[node name="VerticalPlatform2" type="Sprite2D" parent="."]
+position = Vector2(156, 882.625)
+scale = Vector2(1, 0.660112)
+texture = ExtResource("6_a8d15")
+
+[node name="CornerTopLeft3" type="Sprite2D" parent="."]
+position = Vector2(156, 848)
+texture = ExtResource("12_eh5ah")
+
+[node name="PlatformEndRight" type="Sprite2D" parent="."]
+position = Vector2(467, 848)
+texture = ExtResource("4_fbp0q")

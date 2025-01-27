@@ -1,3 +1,4 @@
+
 class_name Level1
 extends Node
 
@@ -12,6 +13,7 @@ var _game_won = false
 @onready var intro_video_stream_player: VideoStreamPlayer = %IntroVideoStreamPlayer
 @onready var win_outro_video_stream_player: VideoStreamPlayer = %WinOutroVideoStreamPlayer
 @onready var lost_outro_video_stream_player: VideoStreamPlayer = %LostOutroVideoStreamPlayer
+@onready var background_music_controller: BGMusicController = %BackgroundMusic_controller
 
 #@onready var win_label: Label = %WinLabel
 #@onready var loos_label: Label = %LoosLabel
@@ -36,9 +38,14 @@ func _process(_delta: float) -> void:
 				all_objects_fixed = false
 	
 	if all_objects_fixed or Input.is_action_just_pressed("cheat_win"):
-		globals.game_won = true
+		
 		#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
-		win_outro_video_stream_player.start()
+		if not _game_won:
+			_game_won = true
+			globals.game_won = true
+			win_outro_video_stream_player.start()
+			background_music_controller.play_outro_win()
+		
 		
 	if Input.is_action_just_pressed("cheat_lose"):
 		_on_timer_timeout()
@@ -48,6 +55,8 @@ func _on_timer_timeout() -> void:
 	globals.game_won = false
 	#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
 	lost_outro_video_stream_player.start()
+	background_music_controller.play_outro_lose()
+	
 func on_intro_video_done():
 	timer.start()
 	player.start_playing()

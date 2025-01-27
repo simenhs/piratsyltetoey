@@ -1,3 +1,4 @@
+class_name BGMusicController
 extends Node
 
 @export var move_zone : Area2D
@@ -72,6 +73,12 @@ func play_help_throw():
 	playing_bg = false
 
 func play_intro():
+	play_bg()
+	
+func play_outro_lose():
+	play_bg()
+	
+func play_outro_win():
 	play_bg()
 	
 func _on_timer_timeout() -> void:

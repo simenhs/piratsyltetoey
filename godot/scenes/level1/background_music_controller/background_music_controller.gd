@@ -10,6 +10,7 @@ extends Node
 var sync_player : AudioStreamSynchronized
 
 var playing_bg = false
+var game_over = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,59 +31,92 @@ func _ready() -> void:
 		
 	#move_zone.area_entered.connect(play_help_move)
 
+
 func mute_steams():
 	for i in sync_player.stream_count:
 		sync_player.set_sync_stream_volume(i,-60)
 		
 func play_bg():
+	if game_over:
+		return
 	mute_steams()
 	sync_player.set_sync_stream_volume(0,0)
 	playing_bg = true
 	
 func play_melody1():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(1,0)
 	
 	
 func play_melody2():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(2,0)
 
 func play_melody3():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(3,0)
 	
 func play_help_jump():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(4,0)
 	playing_bg = false
 	
 func play_help_move():
+	if game_over:
+		return
+		
 	play_bg()
 	sync_player.set_sync_stream_volume(5,0)
 	playing_bg = false
 	
 func play_help_pick_up():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(6,0)
 	playing_bg = false
 	
 func play_help_throw():
+	if game_over:
+		return
 	play_bg()
 	sync_player.set_sync_stream_volume(7,0)
 	playing_bg = false
 
 func play_intro():
+	if game_over:
+		return
 	#play_bg()
 	audio_stream_player.play(0)
 	mute_steams()
 	sync_player.set_sync_stream_volume(8,0)
 	
 func play_outro_lose():
+	if game_over:
+		return
+	audio_stream_player.play(0)
 	play_bg()
+	playing_bg = false
+	sync_player.set_sync_stream_volume(10,0)
+	game_over = true
+	
 	
 func play_outro_win():
+	if game_over:
+		return
+	audio_stream_player.play(0)
 	play_bg()
+	playing_bg = false
+	sync_player.set_sync_stream_volume(9,0)
+	game_over = true
 	
 func _on_timer_timeout() -> void:
 	if playing_bg:

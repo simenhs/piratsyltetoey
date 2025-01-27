@@ -14,7 +14,8 @@ var playing_bg = false
 func _ready() -> void:
 	audio_stream_player = globals.WORLD_ROOT.get_node("music_player")
 	sync_player = audio_stream_player.stream
-	play_help_move()
+	play_intro()
+	move_zone.body_entered.connect(func (_b): play_help_move())
 	move_zone.body_exited.connect(func (_b): play_bg())
 	jump_zone.body_entered.connect(func (_b): play_help_jump())
 	jump_zone.body_exited.connect(func (_b): play_bg())
@@ -70,7 +71,9 @@ func play_help_throw():
 	sync_player.set_sync_stream_volume(7,0)
 	playing_bg = false
 
-
+func play_intro():
+	play_bg()
+	
 func _on_timer_timeout() -> void:
 	if playing_bg:
 		if randf() < 0.5:

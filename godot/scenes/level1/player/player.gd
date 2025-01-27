@@ -20,6 +20,7 @@ var _wall_sliding := false : set = set_wall_sliding
 var walkning := false : set = set_walking
 var jumping := false : set = set_jumping
 var holding_something := false
+var _can_move = false
 
 
 @onready var coyote_timer: Timer = %CoyoteTimer
@@ -31,6 +32,9 @@ func _ready() -> void:
 	spawn_position = position
 
 func _physics_process(delta: float) -> void:
+	if not _can_move:
+		return
+	
 	_move(delta)
 	
 	if is_on_floor():
@@ -239,3 +243,5 @@ func set_jumping(value):
 			else:
 				animated_sprite_2d.play("idle_right")
 	
+func start_playing():
+	_can_move = true

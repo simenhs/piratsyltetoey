@@ -1,14 +1,16 @@
-[gd_scene load_steps=27 format=3 uid="uid://bdsk5sn34y4uq"]
+[gd_scene load_steps=29 format=3 uid="uid://bdsk5sn34y4uq"]
 
 [ext_resource type="Script" path="res://scenes/level1/level_1.gd" id="1_lpcwg"]
 [ext_resource type="PackedScene" uid="uid://cb02wyobajoxx" path="res://scenes/level1/world/world2.tscn" id="2_huxru"]
 [ext_resource type="PackedScene" uid="uid://qboe47l73lll" path="res://scenes/level1/player/player.tscn" id="3_tqm2y"]
 [ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="4_33i86"]
 [ext_resource type="Texture2D" uid="uid://biko0m1vbdbjg" path="res://assets/images/objects/placeholder_gunpowder.png" id="5_bf8ti"]
+[ext_resource type="Texture2D" uid="uid://dbll3g7gf3xvc" path="res://assets/images/platforms/hammer_placeholder.png" id="5_x3f8p"]
 [ext_resource type="Texture2D" uid="uid://crca8vg6yu2b5" path="res://assets/images/objects/placeholder_flint.png" id="6_y8qhv"]
 [ext_resource type="Texture2D" uid="uid://dyt1dghhti3dr" path="res://assets/images/objects/placeholder_bullet.png" id="7_hgusn"]
 [ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="8_1ctgv"]
 [ext_resource type="Texture2D" uid="uid://dojr3n33sqlfl" path="res://assets/images/objects/gunpowder.png" id="9_t7u2k"]
+[ext_resource type="Texture2D" uid="uid://ycipmdc8l4f" path="res://assets/images/platforms/hammer.png" id="10_b4c50"]
 [ext_resource type="Texture2D" uid="uid://brnc2q5gu6moj" path="res://assets/images/objects/flint.png" id="10_fwvv3"]
 [ext_resource type="Texture2D" uid="uid://cv43v436joiqw" path="res://assets/images/objects/bullet.png" id="11_5d63q"]
 [ext_resource type="PackedScene" uid="uid://cns7qe6d4pkwi" path="res://scenes/level1/spikes/spikes.tscn" id="12_gdyw0"]
@@ -16,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="14_2p3pv"]
 [ext_resource type="Texture2D" uid="uid://dm08rnnyh3cys" path="res://assets/images/objects/door_vertical_box.png" id="17_7h6gi"]
 [ext_resource type="PackedScene" uid="uid://ba0j3t7nng262" path="res://scenes/level1/background_music_controller/background_music_controller.tscn" id="21_yvqt8"]
-[ext_resource type="PackedScene" path="res://scenes/level1/vidoeplayer/intro_video_stream_player.tscn" id="38_yld74"]
-[ext_resource type="PackedScene" path="res://scenes/level1/vidoeplayer/outro_video_stream_player.tscn" id="39_0xht3"]
+[ext_resource type="PackedScene" uid="uid://rla4e3uabdhu" path="res://scenes/level1/vidoeplayer/intro_video_stream_player.tscn" id="38_yld74"]
+[ext_resource type="PackedScene" uid="uid://dmcy11u2xqjeb" path="res://scenes/level1/vidoeplayer/outro_video_stream_player.tscn" id="39_0xht3"]
 [ext_resource type="VideoStream" path="res://assets/video/WIN.ogv" id="40_xtk80"]
 [ext_resource type="VideoStream" path="res://assets/video/LOST.ogv" id="41_hh2be"]
 
@@ -67,7 +69,7 @@ one_shot = true
 position = Vector2(653, 500)
 loose_pice = NodePath("../LoosePice")
 _id = "C"
-_texture = ExtResource("5_bf8ti")
+_texture = ExtResource("5_x3f8p")
 
 [node name="HomePosition4" parent="." node_paths=PackedStringArray("loose_pice") instance=ExtResource("4_33i86")]
 position = Vector2(1175, 544)
@@ -90,7 +92,7 @@ _texture = ExtResource("7_hgusn")
 [node name="LoosePice" parent="." instance=ExtResource("8_1ctgv")]
 position = Vector2(79, 631)
 _id = "C"
-_texture = ExtResource("9_t7u2k")
+_texture = ExtResource("10_b4c50")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]

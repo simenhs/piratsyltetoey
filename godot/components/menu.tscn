@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://caoi3bickqfdd"]
+[gd_scene load_steps=6 format=3 uid="uid://cpl0dv8t2ub1l"]
 
 [ext_resource type="Script" path="res://components/menu.gd" id="1_ykyvr"]
 [ext_resource type="Texture2D" uid="uid://d3xt8b5qi7io8" path="res://assets/images/menu/misfire.png" id="2_0wy8k"]

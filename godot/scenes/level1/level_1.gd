@@ -57,10 +57,11 @@ func _process(_delta: float) -> void:
 		timer_label.modulate = Color.WHITE
 
 func _on_timer_timeout() -> void:
-	globals.game_won = false
-	#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
-	lost_outro_video_stream_player.start()
-	background_music_controller.play_outro_lose()
+	if not _game_won:
+		globals.game_won = false
+		#globals.transition_to_scene(globals.ROUND_OVER_SCENE_PATH)
+		lost_outro_video_stream_player.start()
+		background_music_controller.play_outro_lose()
 	
 func on_intro_video_done():
 	timer.start()

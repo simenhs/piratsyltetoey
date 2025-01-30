@@ -25,15 +25,15 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-16.8, 86.7)
-polygon = PackedVector2Array(31, 424, 24, 828, 113.877, 830.853, 150, 832, 367, 793, 512, 753, 561, 689, 595, 677, 624, 669, 680, 671, 801, 652, 1265, 650, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 478, 362, 491, 379, 478, 403, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
+polygon = PackedVector2Array(31, 424, 24, 828, 113.877, 830.853, 150, 832, 367, 793, 507.8, 746.3, 561, 689, 595.8, 682.3, 612.8, 669.3, 685.8, 667.3, 686.8, 651.3, 801, 652, 1265, 650, 1307.8, 650.3, 1698.8, 649.3, 1695.8, 517.3, 1919.8, 517.3, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 478, 362, 491, 379, 478, 403, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 14.8, -85.7, 1934.8, -82.7, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2(-23, 3)
-polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 180, 839, 231, 841, 505, 832, 580, 861, 16, 949, -17, 834)
+polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 180, 839, 232, 837, 500, 839, 580, 861, 16, 949, -17, 834)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="."]
 position = Vector2(-23, 3)
-polygon = PackedVector2Array(11, 840, 101, 841, 100, 911, 175, 910, 175, 838, 232, 839, 488, 838, 580, 861, 16, 949, -17, 834)
+polygon = PackedVector2Array(10, 835, 104, 838, 106, 908, 173, 908, 173, 839, 232, 839, 488, 838, 580, 861, 16, 949, -17, 834)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 2)
@@ -56,14 +56,14 @@ position = Vector2(-44.8, -23.3)
 polygon = PackedVector2Array(543.8, 699.3, 543.8, 850.3, 556.8, 848.3, 555.8, 699.3)
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
-position = Vector2(-44.8, -23.3)
-polygon = PackedVector2Array(49.8, 688.3, 49.8, 703.3, 189.8, 702.3, 188.8, 712.3, 248.8, 713.3, 248.845, 698.067, 303.8, 701.3, 307.8, 712.3, 362.8, 714.3, 364.733, 698.893, 408.8, 700.3, 409.8, 760.3, 445.8, 761.3, 444.8, 807.3, 490.8, 806.3, 488.8, 794.3, 459.8, 792.3, 457.8, 746.3, 422.8, 746.3, 421.8, 685.3, 350.8, 685.3, 348.8, 700.3, 315.8, 699.3, 314.8, 685.3, 235.8, 686.3, 233.8, 700.3, 201.8, 701.3, 201.8, 688.3)
+position = Vector2(-43, -24)
+polygon = PackedVector2Array(50, 686, 49.8, 703.3, 189.8, 702.3, 188.8, 712.3, 248.8, 713.3, 248.845, 698.067, 303.8, 701.3, 307.8, 712.3, 362.8, 714.3, 364.733, 698.893, 405, 699, 406, 760, 442, 762, 442, 807, 490.8, 806.3, 488.8, 794.3, 459.8, 792.3, 457.8, 746.3, 422.8, 746.3, 421.8, 685.3, 350.8, 685.3, 348.8, 700.3, 315.8, 699.3, 314.8, 685.3, 235.8, 686.3, 233.8, 700.3, 201.8, 701.3, 198, 687)
 
 [node name="Node" type="Node" parent="."]
 
 [node name="HorizontalPlatform" type="Sprite2D" parent="Node"]
-position = Vector2(82.625, 669)
-scale = Vector2(0.52234, 1)
+position = Vector2(81.5, 669)
+scale = Vector2(0.531915, 1)
 texture = ExtResource("2_hd1ei")
 
 [node name="HorizontalPlatform2" type="Sprite2D" parent="Node"]
@@ -112,7 +112,7 @@ scale = Vector2(0.114894, 1)
 texture = ExtResource("2_hd1ei")
 
 [node name="PlatformEndLeft2" type="Sprite2D" parent="Node"]
-position = Vector2(19, 669)
+position = Vector2(16, 669)
 texture = ExtResource("3_8mair")
 
 [node name="HorizontalPlatform3" type="Sprite2D" parent="Node"]
@@ -156,8 +156,8 @@ scale = Vector2(1, 0.387816)
 texture = ExtResource("6_a8d15")
 
 [node name="VerticalPlatform2" type="Sprite2D" parent="Node"]
-position = Vector2(505, 752.5)
-scale = Vector2(1, 1.60674)
+position = Vector2(505, 753.5)
+scale = Vector2(1, 1.62921)
 texture = ExtResource("6_a8d15")
 
 [node name="VerticalPlatform4" type="Sprite2D" parent="Node"]
@@ -310,7 +310,7 @@ position = Vector2(311, 669)
 texture = ExtResource("12_eh5ah")
 
 [node name="Spikes3" type="Sprite2D" parent="."]
-position = Vector2(721, 652)
+position = Vector2(721, 654)
 texture = ExtResource("10_vx0d8")
 
 [node name="CornerBottomRight" type="Sprite2D" parent="."]
@@ -318,25 +318,26 @@ position = Vector2(744, 667)
 texture = ExtResource("10_40lvc")
 
 [node name="SpikesLong" type="Sprite2D" parent="."]
-position = Vector2(1829, 582)
+position = Vector2(1829, 584)
 texture = ExtResource("13_4xknn")
 
 [node name="SpikesLong2" type="Sprite2D" parent="."]
-position = Vector2(1725, 583)
+position = Vector2(1741, 584)
 texture = ExtResource("13_4xknn")
 
 [node name="SpikesLong3" type="Sprite2D" parent="."]
-position = Vector2(1315, 519)
+position = Vector2(1312, 519.108)
 rotation = 1.5708
+scale = Vector2(0.987698, 1)
 texture = ExtResource("13_4xknn")
 
 [node name="SpikesLong4" type="Sprite2D" parent="."]
-position = Vector2(1657, 666)
+position = Vector2(1659, 666)
 rotation = -1.5708
 texture = ExtResource("13_4xknn")
 
 [node name="Spikes4" type="Sprite2D" parent="."]
-position = Vector2(1895, 556)
+position = Vector2(1895, 555)
 rotation = -1.5708
 texture = ExtResource("10_vx0d8")
 

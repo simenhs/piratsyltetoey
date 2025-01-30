@@ -96,7 +96,7 @@ _texture = ExtResource("10_b4c50")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
-polygon = PackedVector2Array(-1, 21, 24, 16, -1, -22, -25, 14)
+polygon = PackedVector2Array(-1, 9, 10, 9, 7, 21, 27, 21, 27, 11, 25, 0, 24, -10, 18, -18, 8, -20, 10, -3, -26, -4, -28, 14)
 
 [node name="LoosePice4" parent="." instance=ExtResource("8_1ctgv")]
 position = Vector2(939, 710)
@@ -267,8 +267,10 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
+offset_left = -1.0
+offset_top = -10.0
+offset_right = -1.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("41_hh2be")

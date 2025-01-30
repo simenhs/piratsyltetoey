@@ -28,7 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://ds0xjfctnmjk" path="res://assets/audio/loop1/loop1_pick_it_up.wav" id="19_n05ef"]
 [ext_resource type="AudioStream" uid="uid://bo7mpjou04xd1" path="res://assets/audio/loop1/loop1_hold_e_down.wav" id="20_u74ul"]
 [ext_resource type="AudioStream" uid="uid://xg2puhc5i385" path="res://assets/audio/outro_lose.wav" id="21_4ilhn"]
-[ext_resource type="PackedScene" path="res://components/game_menu.tscn" id="22_e88a6"]
+[ext_resource type="PackedScene" uid="uid://bmksmki2ey4q8" path="res://components/game_menu.tscn" id="22_e88a6"]
 [ext_resource type="AudioStream" uid="uid://hoalki1xc0vr" path="res://assets/audio/intro_song.wav" id="27_04e7u"]
 [ext_resource type="AudioStream" uid="uid://dowlo6frpaeyu" path="res://assets/audio/outro_win.wav" id="28_ndrq6"]
 

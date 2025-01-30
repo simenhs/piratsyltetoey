@@ -119,6 +119,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pl7jl")
 
 [node name="try_again_button" type="Button" parent="Container/panel_loose"]
+modulate = Color(1, 1, 1, 0.247059)
 layout_mode = 2
 offset_left = 1336.0
 offset_top = 506.0
@@ -129,6 +130,7 @@ size_flags_vertical = 4
 text = "YES"
 
 [node name="return_to_menu_button" type="Button" parent="Container/panel_loose"]
+modulate = Color(1, 1, 1, 0.247059)
 layout_mode = 2
 offset_left = 1531.0
 offset_top = 506.0
@@ -145,16 +147,19 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_eehyb")
 
 [node name="next_level" type="Button" parent="Container/panel_win"]
+modulate = Color(1, 1, 1, 0.247059)
 layout_mode = 2
 offset_left = 1024.0
-offset_top = 421.0
+offset_top = 394.0
 offset_right = 1473.0
 offset_bottom = 491.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+disabled = true
 text = "NEXT LEVEL"
 
 [node name="return_to_menu_button" type="Button" parent="Container/panel_win"]
+modulate = Color(1, 1, 1, 0.247059)
 layout_mode = 2
 offset_left = 1136.0
 offset_top = 551.0

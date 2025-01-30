@@ -81,8 +81,10 @@ func play_help_pick_up():
 	if game_over:
 		return
 	play_bg()
-	sync_player.set_sync_stream_volume(6,0)
 	playing_bg = false
+	
+	sync_player.set_sync_stream_volume(6,0)
+	
 	
 func play_help_throw():
 	if game_over:

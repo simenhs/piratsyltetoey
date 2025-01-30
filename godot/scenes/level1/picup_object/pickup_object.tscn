@@ -1,11 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://5r7jflx0vqw1"]
+[gd_scene load_steps=4 format=3 uid="uid://8uywdhgsl0uh"]
 
-[ext_resource type="Script" path="res://scenes/level1/picup_object/pickup_object.gd" id="1_cii00"]
 [ext_resource type="PackedScene" uid="uid://o2pvq4u3r4ou" path="res://scenes/level1/picup_object/home_position.tscn" id="2_mbgx7"]
 [ext_resource type="PackedScene" uid="uid://dt54hcs35cvuw" path="res://scenes/level1/picup_object/loose_pice.tscn" id="3_ehf6y"]
 
+[sub_resource type="GDScript" id="GDScript_nehql"]
+script/source = "@tool
+class_name PickupObject
+extends Node2D
+
+@export var display_name :String = \"A\" : set = set_displayname
+@export var ejection_force : Vector2 = Vector2(300,300)
+@export var ejection_delay : float = 0
+
+var _is_ejected = false
+
+@onready var home_name: Label = %HomeName
+@onready var loose_pice_label: Label = %LoosePiceLabel
+@onready var loose_pice: LoosePice = %LoosePice
+@onready var home_position: HomePosition = %HomePosition
+
+
+
+func _ready() -> void:
+	set_displayname(display_name)
+	get_tree().create_timer(ejection_delay).timeout.connect(eject)
+	
+func set_displayname(value):
+	display_name = value
+	if is_instance_valid(home_name):
+		home_name.text = display_name
+	if is_instance_valid(loose_pice_label):
+		loose_pice_label.text = display_name
+
+#func _input(event: InputEvent) -> void:
+	#if event.is_action(\"jump\"):
+		#eject()
+
+func eject():
+	loose_pice.eject(ejection_force)
+	await get_tree().create_timer(.5).timeout
+	_is_ejected = true
+	
+func is_fixed ()-> bool:
+	var coorect_pos = loose_pice.position == home_position.position
+	 
+	return coorect_pos and _is_ejected
+"
+
 [node name="pickupObject" type="Node2D"]
-script = ExtResource("1_cii00")
+script = SubResource("GDScript_nehql")
 
 [node name="HomePosition" parent="." instance=ExtResource("2_mbgx7")]
 unique_name_in_owner = true

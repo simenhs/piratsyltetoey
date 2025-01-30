@@ -26,7 +26,6 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-16.8, 86.7)
 polygon = PackedVector2Array(31, 424, 24, 828, 113.877, 830.853, 150, 832, 367, 793, 512, 753, 561, 689, 595, 677, 624, 669, 680, 671, 801, 652, 1265, 650, 1305, 656, 1917, 653, 1920, 364, 625, 362, 601, 384, 575, 364, 540, 350, 519, 305, 486, 295, 459, 329, 478, 362, 491, 379, 478, 403, 455, 411, 42, 411, -10, 465, -443, 503, -352, -22, 2241, -26, 2224, 1141, -409, 1253, -418, 518)
-metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2(-23, 3)
@@ -58,7 +57,7 @@ polygon = PackedVector2Array(543.8, 699.3, 543.8, 850.3, 556.8, 848.3, 555.8, 69
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
 position = Vector2(-44.8, -23.3)
-polygon = PackedVector2Array(49.8, 688.3, 49.8, 703.3, 189.8, 702.3, 188.8, 712.3, 248.8, 713.3, 248.845, 698.067, 303.8, 701.3, 307.8, 712.3, 362.8, 714.3, 364.733, 698.893, 426.8, 701.3, 428.8, 793.3, 492.8, 793.3, 488.8, 778.3, 440.8, 781.3, 440.8, 686.3, 350.8, 685.3, 348.8, 700.3, 315.8, 699.3, 314.8, 685.3, 235.8, 686.3, 233.8, 700.3, 201.8, 701.3, 201.8, 688.3)
+polygon = PackedVector2Array(49.8, 688.3, 49.8, 703.3, 189.8, 702.3, 188.8, 712.3, 248.8, 713.3, 248.845, 698.067, 303.8, 701.3, 307.8, 712.3, 362.8, 714.3, 364.733, 698.893, 408.8, 700.3, 409.8, 760.3, 445.8, 761.3, 444.8, 807.3, 490.8, 806.3, 488.8, 794.3, 459.8, 792.3, 457.8, 746.3, 422.8, 746.3, 421.8, 685.3, 350.8, 685.3, 348.8, 700.3, 315.8, 699.3, 314.8, 685.3, 235.8, 686.3, 233.8, 700.3, 201.8, 701.3, 201.8, 688.3)
 
 [node name="Node" type="Node" parent="."]
 
@@ -66,263 +65,233 @@ polygon = PackedVector2Array(49.8, 688.3, 49.8, 703.3, 189.8, 702.3, 188.8, 712.
 position = Vector2(82.625, 669)
 scale = Vector2(0.52234, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform2" type="Sprite2D" parent="Node"]
-position = Vector2(350, 669)
-scale = Vector2(0.274202, 1)
+position = Vector2(340.891, 669)
+scale = Vector2(0.196676, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
+
+[node name="HorizontalPlatform13" type="Sprite2D" parent="Node"]
+position = Vector2(389, 730)
+scale = Vector2(0.0983377, 1)
+texture = ExtResource("2_hd1ei")
 
 [node name="HorizontalPlatform7" type="Sprite2D" parent="Node"]
 position = Vector2(659.391, 559)
 scale = Vector2(0.217952, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform8" type="Sprite2D" parent="Node"]
 position = Vector2(722.305, 667)
 scale = Vector2(0.130253, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform9" type="Sprite2D" parent="Node"]
 position = Vector2(857.152, 531)
 scale = Vector2(0.290658, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform10" type="Sprite2D" parent="Node"]
 position = Vector2(1186.58, 584)
 scale = Vector2(0.924053, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform12" type="Sprite2D" parent="Node"]
 position = Vector2(1790.79, 598)
 scale = Vector2(0.951388, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform11" type="Sprite2D" parent="Node"]
 position = Vector2(1598, 568)
 scale = Vector2(0.459574, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform4" type="Sprite2D" parent="Node"]
-position = Vector2(418, 763)
-scale = Vector2(0.195745, 1)
+position = Vector2(427.5, 777)
+scale = Vector2(0.114894, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndLeft2" type="Sprite2D" parent="Node"]
 position = Vector2(19, 669)
 texture = ExtResource("3_8mair")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform3" type="Sprite2D" parent="Node"]
 position = Vector2(231, 669)
 scale = Vector2(0.235638, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform5" type="Sprite2D" parent="Node"]
 position = Vector2(174, 683)
 scale = Vector2(0.140426, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndRight3" type="Sprite2D" parent="Node"]
-position = Vector2(444, 763)
+position = Vector2(444, 777)
 texture = ExtResource("4_fbp0q")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndRight4" type="Sprite2D" parent="Node"]
 position = Vector2(687, 559)
 texture = ExtResource("4_fbp0q")
-metadata/_edit_lock_ = true
 
 [node name="CornerTopRight" type="Sprite2D" parent="Node"]
-position = Vector2(389, 669)
+position = Vector2(371, 669)
 texture = ExtResource("5_fp4g1")
-metadata/_edit_lock_ = true
+
+[node name="CornerTopRight4" type="Sprite2D" parent="Node"]
+position = Vector2(407, 730)
+texture = ExtResource("5_fp4g1")
 
 [node name="CornerTopRight2" type="Sprite2D" parent="Node"]
 position = Vector2(151, 669)
 texture = ExtResource("5_fp4g1")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform" type="Sprite2D" parent="Node"]
-position = Vector2(389, 716.125)
-scale = Vector2(1, 0.924157)
+position = Vector2(371, 699.438)
+scale = Vector2(1, 0.529494)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
+
+[node name="VerticalPlatform11" type="Sprite2D" parent="Node"]
+position = Vector2(407, 753.258)
+scale = Vector2(1, 0.387816)
+texture = ExtResource("6_a8d15")
 
 [node name="VerticalPlatform2" type="Sprite2D" parent="Node"]
 position = Vector2(505, 752.5)
 scale = Vector2(1, 1.60674)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform4" type="Sprite2D" parent="Node"]
 position = Vector2(628, 637)
 scale = Vector2(1, 1.60674)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform3" type="Sprite2D" parent="Node"]
 position = Vector2(569, 587.5)
 scale = Vector2(1, 2.61798)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform5" type="Sprite2D" parent="Node"]
 position = Vector2(744, 555.25)
 scale = Vector2(1, 2.35393)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform6" type="Sprite2D" parent="Node"]
 position = Vector2(898, 486.125)
 scale = Vector2(1, 0.851123)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform7" type="Sprite2D" parent="Node"]
 position = Vector2(1075, 484.563)
 scale = Vector2(1, 0.751405)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform9" type="Sprite2D" parent="Node"]
 position = Vector2(1072, 631.281)
 scale = Vector2(1, 0.915028)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform8" type="Sprite2D" parent="Node"]
 position = Vector2(1301, 514.781)
 scale = Vector2(1, 1.42065)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="VerticalPlatform10" type="Sprite2D" parent="Node"]
 position = Vector2(1672, 669.891)
 scale = Vector2(1, 1.4856)
 texture = ExtResource("6_a8d15")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomLeft" type="Sprite2D" parent="Node"]
-position = Vector2(389, 763)
+position = Vector2(407, 777)
 texture = ExtResource("7_ef23i")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomLeft2" type="Sprite2D" parent="Node"]
 position = Vector2(151, 683)
 texture = ExtResource("7_ef23i")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndTop" type="Sprite2D" parent="Node"]
 position = Vector2(505, 678)
 texture = ExtResource("8_6adts")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndBottom" type="Sprite2D" parent="Node"]
 position = Vector2(569, 706)
 texture = ExtResource("9_okgc3")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndBottom2" type="Sprite2D" parent="Node"]
 position = Vector2(628, 711)
 texture = ExtResource("9_okgc3")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndTop2" type="Sprite2D" parent="Node"]
 position = Vector2(569, 468)
 texture = ExtResource("8_6adts")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomRight" type="Sprite2D" parent="Node"]
 position = Vector2(197, 683)
 texture = ExtResource("10_40lvc")
-metadata/_edit_lock_ = true
 
 [node name="HorizontalPlatform6" type="Sprite2D" parent="Node"]
 position = Vector2(288, 683)
 scale = Vector2(0.140426, 1)
 texture = ExtResource("2_hd1ei")
-metadata/_edit_lock_ = true
 
 [node name="CornerTopRight3" type="Sprite2D" parent="Node"]
 position = Vector2(265, 669)
 texture = ExtResource("5_fp4g1")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomLeft3" type="Sprite2D" parent="Node"]
 position = Vector2(265, 683)
 texture = ExtResource("7_ef23i")
-metadata/_edit_lock_ = true
+
+[node name="CornerBottomLeft4" type="Sprite2D" parent="Node"]
+position = Vector2(371, 730)
+texture = ExtResource("7_ef23i")
 
 [node name="CornerBottomRight2" type="Sprite2D" parent="Node"]
 position = Vector2(311, 683)
 texture = ExtResource("10_40lvc")
-metadata/_edit_lock_ = true
 
 [node name="CornerTopLeft" type="Sprite2D" parent="Node"]
 position = Vector2(628, 559)
 texture = ExtResource("12_eh5ah")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndLeft" type="Sprite2D" parent="Node"]
 position = Vector2(704, 667)
 texture = ExtResource("3_8mair")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndLeft3" type="Sprite2D" parent="Node"]
 position = Vector2(820, 531)
 texture = ExtResource("3_8mair")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomRight3" type="Sprite2D" parent="Node"]
 position = Vector2(898, 531)
 texture = ExtResource("10_40lvc")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndBottom3" type="Sprite2D" parent="Node"]
 position = Vector2(1075, 520)
 texture = ExtResource("9_okgc3")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndBottom4" type="Sprite2D" parent="Node"]
 position = Vector2(1072, 674)
 texture = ExtResource("9_okgc3")
-metadata/_edit_lock_ = true
 
 [node name="CornerBottomRight4" type="Sprite2D" parent="Node"]
 position = Vector2(1301, 584)
 texture = ExtResource("10_40lvc")
-metadata/_edit_lock_ = true
 
 [node name="CornerTopLeft2" type="Sprite2D" parent="Node"]
 position = Vector2(1072, 584)
 texture = ExtResource("12_eh5ah")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndLeft4" type="Sprite2D" parent="Node"]
 position = Vector2(1541, 568)
 texture = ExtResource("3_8mair")
-metadata/_edit_lock_ = true
 
 [node name="PlatformEndRight" type="Sprite2D" parent="Node"]
 position = Vector2(1655, 568)
 texture = ExtResource("4_fbp0q")
-metadata/_edit_lock_ = true
 
 [node name="CornerTopLeft3" type="Sprite2D" parent="Node"]
 position = Vector2(1672, 598)
 texture = ExtResource("12_eh5ah")
-metadata/_edit_lock_ = true
 
 [node name="Spikes" type="Sprite2D" parent="."]
 position = Vector2(174, 669)

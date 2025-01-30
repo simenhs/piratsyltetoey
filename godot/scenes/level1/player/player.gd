@@ -8,6 +8,7 @@ const JUMP_VELOCITY :float = -400.0
 const SLIDE_DOWN_SPEED :float= 50
 const DASH_SPEED :float= 10000
 const DASH_COOLDOWN_TIME :float = 1
+const PUSH_FORCE : float = 1
 
 
 var dash_on_cooldown :bool = false
@@ -65,8 +66,27 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("dash"):
 		_dash()
+	
+	
+	for i in get_slide_collision_count():
+		var collistion =  get_slide_collision(i)
+		var other = collistion.get_collider()
+		if other is LoosePice:
+			var push_dir = -collistion.get_normal()
+			var velocity_diff_in_push_dir = self.velocity.dot(push_dir) - other.linear_velocity.dot(push_dir)
+			velocity_diff_in_push_dir = clamp(velocity_diff_in_push_dir,0,velocity_diff_in_push_dir)
+			printt ("vel: ", velocity_diff_in_push_dir, push_dir)
+			push_dir.y = 0
+			
+			other.apply_central_impulse(push_dir*velocity_diff_in_push_dir*PUSH_FORCE)
+			#other.apply_impulse(push_dir*velocity_diff_in_push_dir*PUSH_FORCE, collistion.get_position()-other.global_position)
+			
+			#if not other.attatched_to == self: ## don't push while holding 
+			#other.apply_central_force(-collistion.get_normal()*PUSH_FORCE )
+			#other.apply_force(collistion.get_normal()*PUSH_FORCE,collistion.get_position() )
+			
+	velocity = clamp(velocity,Vector2(-SPEED,-SPEED),Vector2(SPEED,SPEED))
 	move_and_slide()
-
 	jumping = not (is_on_floor() or is_on_wall())
 
 func _jump(_delta : float):

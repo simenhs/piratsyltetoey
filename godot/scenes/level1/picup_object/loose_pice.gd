@@ -111,9 +111,11 @@ func set_attached_to(value):
 		if is_instance_valid(attatched_to):
 			attatched_to.drop_items.disconnect(respawn)
 		attatched_to = value
+		set_collision_layer_value(3,true) # do not collide with player while beeing held 
 	else : 
 		attatched_to = value
 		attatched_to.drop_items.connect(respawn)
+		set_collision_layer_value(3,false)
 
 		
 

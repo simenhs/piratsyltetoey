@@ -119,7 +119,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_pl7jl")
 
 [node name="try_again_button" type="Button" parent="Container/panel_loose"]
-modulate = Color(1, 1, 1, 0.247059)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 1336.0
 offset_top = 506.0
@@ -127,10 +127,9 @@ offset_right = 1417.0
 offset_bottom = 552.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "YES"
 
 [node name="return_to_menu_button" type="Button" parent="Container/panel_loose"]
-modulate = Color(1, 1, 1, 0.247059)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 1531.0
 offset_top = 506.0
@@ -138,8 +137,6 @@ offset_right = 1613.0
 offset_bottom = 558.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "NO
-"
 
 [node name="panel_win" type="Panel" parent="Container"]
 custom_minimum_size = Vector2(1920, 1080)
@@ -147,7 +144,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_eehyb")
 
 [node name="next_level" type="Button" parent="Container/panel_win"]
-modulate = Color(1, 1, 1, 0.247059)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 1024.0
 offset_top = 394.0
@@ -156,10 +153,11 @@ offset_bottom = 491.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 disabled = true
-text = "NEXT LEVEL"
+text = "
+"
 
 [node name="return_to_menu_button" type="Button" parent="Container/panel_win"]
-modulate = Color(1, 1, 1, 0.247059)
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 offset_left = 1136.0
 offset_top = 551.0
@@ -167,7 +165,7 @@ offset_right = 1354.0
 offset_bottom = 627.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "QUIT
+text = "
 "
 
 [node name="TempEndScreen" type="AnimatedSprite2D" parent="."]

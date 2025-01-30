@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://c43e85p31p2nv" path="res://scenes/level1/doors/door.tscn" id="14_2p3pv"]
 [ext_resource type="Texture2D" uid="uid://dm08rnnyh3cys" path="res://assets/images/objects/door_vertical_box.png" id="17_7h6gi"]
 [ext_resource type="PackedScene" uid="uid://ba0j3t7nng262" path="res://scenes/level1/background_music_controller/background_music_controller.tscn" id="21_yvqt8"]
-[ext_resource type="PackedScene" path="res://scenes/level1/vidoeplayer/intro_video_stream_player.tscn" id="38_yld74"]
-[ext_resource type="PackedScene" path="res://scenes/level1/vidoeplayer/outro_video_stream_player.tscn" id="39_0xht3"]
+[ext_resource type="PackedScene" uid="uid://rla4e3uabdhu" path="res://scenes/level1/vidoeplayer/intro_video_stream_player.tscn" id="38_yld74"]
+[ext_resource type="PackedScene" uid="uid://dmcy11u2xqjeb" path="res://scenes/level1/vidoeplayer/outro_video_stream_player.tscn" id="39_0xht3"]
 [ext_resource type="VideoStream" path="res://assets/video/WIN.ogv" id="40_xtk80"]
 [ext_resource type="VideoStream" path="res://assets/video/LOST.ogv" id="41_hh2be"]
 
@@ -96,7 +96,7 @@ _texture = ExtResource("10_b4c50")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LoosePice"]
-polygon = PackedVector2Array(-1, 9, 10, 9, 7, 21, 27, 21, 27, 11, 25, 0, 24, -10, 18, -18, 8, -20, 10, -3, -26, -4, -28, 14)
+polygon = PackedVector2Array(-13, 15, -3, 17, 7, 21, 27, 21, 27, 11, 25, 0, 24, -10, 18, -18, 8, -20, -9, -12, -26, -4, -28, 14)
 
 [node name="LoosePice4" parent="." instance=ExtResource("8_1ctgv")]
 position = Vector2(939, 710)

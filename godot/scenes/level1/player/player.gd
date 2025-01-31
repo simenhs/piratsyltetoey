@@ -64,8 +64,7 @@ func _physics_process(delta: float) -> void:
 	_fall_down(delta)
 	
 	
-	if Input.is_action_just_pressed("dash"):
-		_dash()
+	
 	
 	
 	for i in get_slide_collision_count():
@@ -86,6 +85,10 @@ func _physics_process(delta: float) -> void:
 			#other.apply_force(collistion.get_normal()*PUSH_FORCE,collistion.get_position() )
 			
 	velocity = clamp(velocity,Vector2(-SPEED,-SPEED),Vector2(SPEED,SPEED))
+	
+	if Input.is_action_just_pressed("dash"):
+		_dash()
+		
 	move_and_slide()
 	jumping = not (is_on_floor() or is_on_wall())
 

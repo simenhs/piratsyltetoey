@@ -129,19 +129,19 @@ shape = SubResource("CircleShape2D_83c7m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes"]
 position = Vector2(-61, -124)
-polygon = PackedVector2Array(215, 798, 252, 798, 252, 806, 215, 807)
+polygon = PackedVector2Array(215, 790, 234, 785, 253, 790, 252, 806, 215, 807)
 
 [node name="Spikes2" parent="." instance=ExtResource("12_gdyw0")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes2"]
 position = Vector2(49, -122)
-polygon = PackedVector2Array(215, 798, 282, 797, 283, 807, 215, 807)
+polygon = PackedVector2Array(215, 789, 238, 782, 261, 789, 260, 806, 215, 807)
 
 [node name="Spikes3" parent="." instance=ExtResource("12_gdyw0")]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes3"]
 position = Vector2(501, -142)
-polygon = PackedVector2Array(215, 798, 240, 799, 238, 807, 215, 807)
+polygon = PackedVector2Array(207, 797, 241, 792, 238, 807, 205, 809)
 
 [node name="Spikes4" parent="." instance=ExtResource("12_gdyw0")]
 
